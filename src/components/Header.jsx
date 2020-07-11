@@ -1,38 +1,53 @@
 import React, { Component } from 'react';
-import styles from "../sass/Header.sass"
-import { withStyles, fade, makeStyles } from '@material-ui/core/styles';
+import { withStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import IconButton from '@material-ui/core/IconButton';
-import Typography from '@material-ui/core/Typography';
-import InputBase from '@material-ui/core/InputBase';
-import Badge from '@material-ui/core/Badge';
-import MenuItem from '@material-ui/core/MenuItem';
-import Menu from '@material-ui/core/Menu';
-import MenuIcon from '@material-ui/icons/Menu';
-import SearchIcon from '@material-ui/icons/Search';
-import AccountCircle from '@material-ui/icons/AccountCircle';
-import MailIcon from '@material-ui/icons/Mail';
-import NotificationsIcon from '@material-ui/icons/Notifications';
-import MoreIcon from '@material-ui/icons/MoreVert';
+import Container from '@material-ui/core/Container';
 
+// import components
+import Telephone from "./Telephone";
 
-const myStyles = {
-    grow: {
-        flexGrow: 1,
+// import containers
+import Languages from "../containers/Languages";
+import City from "../containers/City";
+import Profile from "../containers/Profile";
+import Catalog from "../containers/Catalog";
+import Search from "../containers/Search";
+import Compare from "../containers/Compare";
+import WishList from "../containers/WishList";
+import Cart from "../containers/Cart";
+
+const logo = require('../images/logo.png');
+
+const myStyles = (theme) => ({
+    headerUpper: {
+        display: 'flex',
+        justifyContent: 'flex-end',
+        paddingTop: 8,
+        fontSize: 12,
+        lineHeight: '14px',
+        letterSpacing: 'normal',
     },
-    // menuButton: {
-    //     marginRight: theme.spacing(2),
-    // },
-    root: {
-        paddingTop: '8px',
-        paddingBottom: '16px'
+    headerContent: {
+        display: 'flex',
+        alignItems: 'center',
+        paddingTop: 16,
+        paddingBottom: 16,
     },
-    test: {
-        color: 'red'
-    }
-}
-
+    logo: {
+        width: 40,
+        height: 40,
+    },
+    companyName: {
+        fontSize: 28,
+        // lineHeight: '30px',
+        fontWeight: 700,
+        fontStyle: 'italic',
+        // color: theme.palette.primary.contrastText,
+    },
+    menuButton: {
+        marginRight: theme.spacing(2),
+    },
+})
 
 @withStyles(myStyles)
 class Header extends Component {
@@ -42,21 +57,23 @@ class Header extends Component {
 
     render() {
         return (
-            // <div className={classes.grow}>
-                <AppBar position="static" className={this.props.classes.root}>
-                    <Toolbar>
-                        <IconButton
-                            edge="start"
-                            className={this.props.classes.menuButton}
-                            color="inherit"
-                            aria-label="open drawer"
-                        >
-                            <MenuIcon />
-                        </IconButton>
-                    </Toolbar>
-                    <span className={this.props.classes.test}>some red text</span>
-                </AppBar>
-            // </div>
+            <AppBar position="static">
+                <Container maxWidth="lg" className={this.props.classes.headerUpper}>
+                    <Telephone/>
+                    <Languages/>
+                    <City/>
+                    <Profile/>
+                </Container>
+                <Container maxWidth="lg" className={this.props.classes.headerContent}>
+                    <img src={logo} alt="КлимаВент" className={this.props.classes.logo}/>
+                    <span className={this.props.classes.companyName}>КлимаВент</span>
+                    <Catalog/>
+                    <Search/>
+                    <Compare/>
+                    <WishList/>
+                    <Cart/>
+                </Container>
+            </AppBar>
         );
     }
 }

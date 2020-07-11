@@ -1,13 +1,12 @@
 import { combineReducers } from 'redux';
 
-// import books from './books';
-// import cart from './cart';
-// import filter from './filter';
-import tests from "./tests"
+import language from "./language"
+import city from "./city"
+import profile from "./profile"
+
 
 export default combineReducers({
-    // books,
-    // cart,
-    // filter,
-    tests
+    language,
+    city,
+    profile,
 });
