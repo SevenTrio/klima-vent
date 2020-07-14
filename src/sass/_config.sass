@@ -1,11 +1,12 @@
-button:active, button:focus
-  outline: none
 
-button::-moz-focus-inner
-  border: 0
 
-button:hover
-  cursor: pointer
 
-input:active, input:focus
-  outline: none
+=keyframes($name)
+  @-webkit-keyframes #{$name}
+    @content
+  @-moz-keyframes #{$name}
+    @content
+  @-ms-keyframes #{$name}
+    @content
+  @keyframes #{$name}
+    @content

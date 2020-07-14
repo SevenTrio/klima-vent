@@ -2,6 +2,8 @@ import React, { Component, Fragment } from 'react';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 
+import "../sass/main.sass";
+
 import Header from "../containers/Header";
 
 const theme = createMuiTheme({
@@ -20,10 +22,21 @@ const theme = createMuiTheme({
         text: {
             primary: '#303030',
         }
-    }
+    },
+
+    breakpoints: {
+        values: {
+            xs: 0,
+            sm: 600,
+            md: 960,
+            lg: 1280,
+            // xl: 1920,
+        },
+    },
 });
 
 console.log(theme.palette);
+console.log(theme.breakpoints);
 
 class App extends Component {
     componentWillMount() {

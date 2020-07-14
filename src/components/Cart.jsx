@@ -1,10 +1,13 @@
 import React, {Fragment} from 'react';
+import IconButton from '@material-ui/core/IconButton';
 import ShoppingCartOutlinedIcon from '@material-ui/icons/ShoppingCartOutlined';import styles from "../sass/Cart.module.sass";
 
-const Cart = ({  }) => {
+const Cart = () => {
     return(
         <Fragment>
-            <ShoppingCartOutlinedIcon className={styles.cartIcon}/>
+            <IconButton className={styles.cartButton}>
+                <ShoppingCartOutlinedIcon className={styles.cartIcon}/>
+            </IconButton>
         </Fragment>
     )}
 
