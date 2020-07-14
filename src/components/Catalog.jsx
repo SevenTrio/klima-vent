@@ -11,7 +11,8 @@ const Catalog = () => {
     return(
         <Fragment>
             <RippleButton classes={styles.catalogButton}>
-                <ViewListRoundedIcon className={styles.catalogButtonIcon} /> Каталог товаров
+                <ViewListRoundedIcon className={styles.catalogButtonIcon} />
+                Каталог товаров
             </RippleButton>
         </Fragment>
     )}
