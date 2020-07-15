@@ -1,6 +1,9 @@
-import React, {Fragment} from 'react';
+import React, { Fragment } from 'react';
+// import classNames from 'classnames/bind';
+
 import IconButton from '@material-ui/core/IconButton';
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
+
 import styles from "../sass/WishList.module.sass";
 
 const WishList = () => {

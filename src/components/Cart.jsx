@@ -1,6 +1,10 @@
-import React, {Fragment} from 'react';
+import React, { Fragment } from 'react';
+// import classNames from 'classnames/bind';
+
 import IconButton from '@material-ui/core/IconButton';
-import ShoppingCartOutlinedIcon from '@material-ui/icons/ShoppingCartOutlined';import styles from "../sass/Cart.module.sass";
+import ShoppingCartOutlinedIcon from '@material-ui/icons/ShoppingCartOutlined';
+
+import styles from "../sass/Cart.module.sass";
 
 const Cart = () => {
     return(

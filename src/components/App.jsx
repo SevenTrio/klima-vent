@@ -5,6 +5,7 @@ import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 import "../sass/main.sass";
 
 import Header from "../containers/Header";
+import withWidth from "@material-ui/core/withWidth";
 
 const theme = createMuiTheme({
     palette: {
@@ -35,9 +36,7 @@ const theme = createMuiTheme({
     },
 });
 
-console.log(theme.palette);
-console.log(theme.breakpoints);
-
+@withWidth()
 class App extends Component {
     componentWillMount() {
 

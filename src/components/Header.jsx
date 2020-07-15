@@ -1,7 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-
-import withWidth from '@material-ui/core/withWidth';
 import { withStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Container from '@material-ui/core/Container';
@@ -9,18 +6,19 @@ import Hidden from '@material-ui/core/Hidden';
 
 // import my components
 import Telephone from "./Telephone";
+import Logo from "./Logo";
+import MobileMenu from "./MobileMenu";
 
 // import my containers
 import Languages from "../containers/Languages";
 import City from "../containers/City";
 import Profile from "../containers/Profile";
+// import MobileMenu from "../containers/MobileMenu";
 import Catalog from "../containers/Catalog";
 import Search from "../containers/Search";
 import Compare from "../containers/Compare";
 import WishList from "../containers/WishList";
 import Cart from "../containers/Cart";
-
-const logo = require('../images/logo.png');
 
 const myStyles = (theme) => ({
     headerUpper: {
@@ -38,25 +36,12 @@ const myStyles = (theme) => ({
         // paddingTop: 16,
         // paddingBottom: 16,
     },
-    logo: {
-        width: 40,
-        height: 40,
-    },
-    companyName: {
-        marginLeft: 8,
-        fontSize: 28,
-        // lineHeight: '30px',
-        fontWeight: 700,
-        fontStyle: 'italic',
-        // color: theme.palette.primary.contrastText,
-    },
     menuButton: {
         marginRight: theme.spacing(2),
     },
 })
 
 @withStyles(myStyles)
-@withWidth()
 class Header extends Component {
     componentWillMount() {
 
@@ -77,10 +62,10 @@ class Header extends Component {
 
                     <div className={this.props.classes.headerContent}>
                         <Hidden smDown>
-                            <img src={logo} alt="КлимаВент" className={this.props.classes.logo}/>
+                            <Logo/>
                         </Hidden>
-                        <Hidden mdDown>
-                            <span className={this.props.classes.companyName}>КлимаВент</span>
+                        <Hidden mdUp>
+                            <MobileMenu/>
                         </Hidden>
                         <Hidden smDown>
                             <Catalog/>
@@ -97,9 +82,5 @@ class Header extends Component {
         );
     }
 }
-
-Header.propTypes = {
-    width: PropTypes.oneOf(['lg', 'md', 'sm', 'xs']).isRequired,
-};
 
 export default Header;

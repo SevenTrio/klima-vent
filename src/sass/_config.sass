@@ -1,5 +1,27 @@
+@import "palette"
+@import "shadows"
 
+//  functions
 
+@function color($first-key, $second-key)
+  @if map-has-key($palette, $first-key)
+    @if map-has-key(map-get($palette, $first-key), $second-key)
+      @return map-get(map-get($palette, $first-key), $second-key)
+    @if $second-key == light
+      @if map-has-key(map-get($palette, $first-key), main)
+        @return lighten(map-get(map-get($palette, $first-key), main), 10%)
+    @if $second-key == dark
+      @if map-has-key(map-get($palette, $first-key), main)
+        @return darken(map-get(map-get($palette, $first-key), main), 10%)
+
+  @return #000
+
+@function shadows($key)
+  @if map-has-key($shadows, $key)
+    @return map-get($shadows, $key)
+  @return null
+
+//  mixins
 
 =keyframes($name)
   @-webkit-keyframes #{$name}
