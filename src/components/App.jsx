@@ -1,11 +1,13 @@
 import React, { Component, Fragment } from 'react';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 
-import "../sass/main.sass";
+import withWidth from "@material-ui/core/withWidth";
+import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
+import CssBaseline from '@material-ui/core/CssBaseline';
 
 import Header from "../containers/Header";
-import withWidth from "@material-ui/core/withWidth";
+import Slider from "./Slideshow";
+
+import "../sass/main.sass";
 
 const theme = createMuiTheme({
     palette: {
@@ -48,6 +50,7 @@ class App extends Component {
                 <CssBaseline/>
                 <ThemeProvider theme={theme}>
                     <Header/>
+                    <Slider/>
                 </ThemeProvider>
             </Fragment>
         );

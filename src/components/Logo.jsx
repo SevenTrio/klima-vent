@@ -6,7 +6,6 @@ import Hidden from "@material-ui/core/Hidden";
 
 const logo = require('../images/logo.png');
 
-// TODO: Сделать кликабельным
 const Logo = () => {
     return(
         <Fragment>
