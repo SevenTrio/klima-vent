@@ -3,9 +3,11 @@ import React, { Component, Fragment } from 'react';
 import withWidth from "@material-ui/core/withWidth";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 import CssBaseline from '@material-ui/core/CssBaseline';
+import Container from '@material-ui/core/Container';
 
 import Header from "../containers/Header";
 import Slider from "./Slideshow";
+import Brands from "./Brands"
 
 import "../sass/main.sass";
 
@@ -51,6 +53,9 @@ class App extends Component {
                 <ThemeProvider theme={theme}>
                     <Header/>
                     <Slider/>
+                    <Container maxWidth="lg">
+                        <Brands/>
+                    </Container>
                 </ThemeProvider>
             </Fragment>
         );
