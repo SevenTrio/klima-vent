@@ -8,15 +8,15 @@ import "../sass/slideshow-fix.css";
 const Slideshow = () => {
     const images = [
         {
-            src: require('../images/banner-1.jpg'),
+            src: require('../images/banners/banner-1.jpg'),
             alt: 'some alt text 1',
         },
         {
-            src: require('../images/banner-2.jpg'),
+            src: require('../images/banners/banner-2.jpg'),
             alt: 'some alt text 2',
         },
         {
-            src: require('../images/banner-3.jpg'),
+            src: require('../images/banners/banner-3.jpg'),
             alt: 'some alt text 3'
         },
     ];

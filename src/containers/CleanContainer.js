@@ -3,7 +3,7 @@ import CleanContainer from '../components/CleanContainer';
 // import {bindActionCreators} from "redux";
 // import * as cleanContainerActions from "../actions/cleanContainer";
 
-const mapStateToProps = ({  }) => ({
+const mapStateToProps = () => ({
 
 });
 

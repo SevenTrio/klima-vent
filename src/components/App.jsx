@@ -8,6 +8,8 @@ import Container from '@material-ui/core/Container';
 import Header from "../containers/Header";
 import Slider from "./Slideshow";
 import Brands from "./Brands"
+import SpecialOffers from "./SpecialOffers";
+import AboutCompany from "./AboutCompany";
 
 import "../sass/main.sass";
 
@@ -55,6 +57,8 @@ class App extends Component {
                     <Slider/>
                     <Container maxWidth="lg">
                         <Brands/>
+                        <SpecialOffers/>
+                        <AboutCompany/>
                     </Container>
                 </ThemeProvider>
             </Fragment>

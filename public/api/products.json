@@ -1,0 +1,84 @@
+{
+  "products": [
+    {
+      "id": "000001",
+      "name": "Лучший кондиционер рх321-545",
+      "rating": 3.3,
+      "numberOfRatings": 125,
+      "oldPrice": 20000,
+      "currentPrice": 18999
+    },
+    {
+      "id": "000002",
+      "name": "Лучший кондиционер рх321-545",
+      "rating": 2,
+      "numberOfRatings": 97,
+      "oldPrice": 20000,
+      "currentPrice": 18999
+    },
+    {
+      "id": "000003",
+      "name": "Лучший кондиционер рх321-545",
+      "rating": 4.5,
+      "numberOfRatings": 105,
+      "oldPrice": 20000,
+      "currentPrice": 18999
+    },
+    {
+      "id": "000004",
+      "name": "Лучший кондиционер рх321-545",
+      "rating": 3.75,
+      "numberOfRatings": 156,
+      "oldPrice": 20000,
+      "currentPrice": 18999
+    },
+    {
+      "id": "000005",
+      "name": "Лучший кондиционер рх321-545",
+      "rating": 1,
+      "numberOfRatings": 426,
+      "oldPrice": 20000,
+      "currentPrice": 18999
+    },
+    {
+      "id": "000006",
+      "name": "Лучший кондиционер рх321-545",
+      "rating": 5,
+      "numberOfRatings": 127,
+      "oldPrice": 20000,
+      "currentPrice": 18999
+    },
+    {
+      "id": "000007",
+      "name": "Лучший кондиционер рх321-545",
+      "rating": 4.5,
+      "numberOfRatings": 88,
+      "oldPrice": 20000,
+      "currentPrice": 18999
+    },
+    {
+      "id": "000008",
+      "name": "Лучший кондиционер рх321-545",
+      "rating": 2.5,
+      "numberOfRatings": 147,
+      "oldPrice": 20000,
+      "currentPrice": 18999
+    },
+    {
+      "id": "000009",
+      "name": "Лучший кондиционер рх321-545",
+      "rating": 3.85,
+      "numberOfRatings": 225,
+      "oldPrice": 20000,
+      "currentPrice": 18999
+    },
+    {
+      "id": "000010",
+      "name": "Лучший кондиционер рх321-545",
+      "rating": 3.85,
+      "numberOfRatings": 225,
+      "oldPrice": 20000,
+      "currentPrice": 18999
+    }
+  ]
+}
