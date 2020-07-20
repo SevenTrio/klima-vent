@@ -1,11 +1,12 @@
 import React from 'react';
-import classNames from 'classnames/bind';
+// import classNames from 'classnames/bind';
 import { Fade } from 'react-slideshow-image';
 import 'react-slideshow-image/dist/styles.css'
 
 import "../sass/slideshow-fix.css";
 
 const Slideshow = () => {
+    // TODO: Заменить изображения и alt в банерах
     const images = [
         {
             src: require('../images/banners/banner-1.jpg'),

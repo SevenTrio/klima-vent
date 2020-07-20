@@ -8,12 +8,15 @@
 
   width: 100%
   height: 40px
-  //TODO: 20px smDown
   margin-left: 32px
 
   border-radius: 3px
 
   background-color: color(background, paper)
+
+  +to($break_md)
+    margin-left: 12px
+
 
 .searchIcon
   position: absolute
@@ -57,4 +60,3 @@
 
   &:hover
     background-color: color(secondary, dark)
-

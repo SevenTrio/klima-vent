@@ -22,11 +22,14 @@
     z-index: 1
     box-shadow: 0 0 10px 5px color(gray, 300)
 
+  +to($break_md)
+    width: 33.33333%
+
+  +to($break_sm)
+    width: 50%
+
 
 .code
-  //display: flex
-  //align-self: flex-end
-
   margin-bottom: 16px
 
   line-height: 10px
@@ -73,6 +76,9 @@
 .ratingStars
   font-size: 22px !important
 
+  +to($break_lg)
+    font-size: 20px !important
+
 
 .numberOfRating
   margin-left: 8px
@@ -86,6 +92,9 @@
 .row
   display: flex
   flex-direction: row
+  //justify-content: center
+  align-items: center
+
   margin-top: 32px
 
 
@@ -94,7 +103,6 @@
   justify-content: flex-end
   flex-direction: column
 
-  height: 40px
 
 .oldPrice
   display: flex
@@ -121,12 +129,22 @@
 
     background: #ff090b
 
-  span:after
-    content: ' ₴'
+  +to($break_lg)
+    line-height: 14px
+    font-size: 12px
 
-    white-space: pre
-    line-height: 12px
-    font-size: 10px
+
+.oldPriceText:after
+  content: ' ₴'
+
+  white-space: pre
+  line-height: 12px
+  font-size: 10px
+
+  +to($break_lg)
+    line-height: 10px
+    font-size: 8px
+
 
 .currentPrice
   display: flex
@@ -135,15 +153,28 @@
   font-size: 20px
   font-weight: 700
 
-  span:after
-    content: ' ₴'
+  +to($break_lg)
+    line-height: 22px
+    font-size: 18px
 
-    white-space: pre
-    line-height: 16px
-    font-size: 14px
+
+.currentPriceText:after
+  content: ' ₴'
+
+  white-space: pre
+  line-height: 16px
+  font-size: 14px
+
+  +to($break_lg)
+    line-height: 14px
+    font-size: 12px
 
 
 .button
+  display: flex
+  justify-content: center
+  align-items: center
+
   width: 120px
   height: 40px
   margin-left: auto

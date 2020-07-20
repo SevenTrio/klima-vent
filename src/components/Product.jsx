@@ -30,10 +30,10 @@ const Product = ({ product }) => {
             <div className={styles.row}>
                 <div className={styles.price}>
                     <div className={styles.oldPrice}>
-                        <span>{oldPrice}</span>
+                        <span className={styles.oldPriceText}>{oldPrice}</span>
                     </div>
                     <div className={styles.currentPrice}>
-                        <span>{currentPrice}</span>
+                        <span className={styles.currentPriceText}>{currentPrice}</span>
                     </div>
                 </div>
                 <button className={styles.button}>Купить</button>

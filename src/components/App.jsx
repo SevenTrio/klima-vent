@@ -4,6 +4,7 @@ import withWidth from "@material-ui/core/withWidth";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Container from '@material-ui/core/Container';
+import Hidden from '@material-ui/core/Hidden';
 
 import Header from "../containers/Header";
 import Slider from "./Slideshow";
@@ -56,7 +57,9 @@ class App extends Component {
                     <Header/>
                     <Slider/>
                     <Container maxWidth="lg">
-                        <Brands/>
+                        <Hidden smDown>
+                            <Brands/>
+                        </Hidden>
                         <SpecialOffers/>
                         <AboutCompany/>
                     </Container>

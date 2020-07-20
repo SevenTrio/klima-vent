@@ -2,6 +2,10 @@
     position: relative;
 }
 
+.each-fade img {
+    width: 100%;
+}
+
 .react-slideshow-container+div.indicators {
     position: absolute;
     left: 50%;
