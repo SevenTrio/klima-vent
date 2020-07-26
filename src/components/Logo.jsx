@@ -4,7 +4,7 @@ import React, { Fragment } from 'react';
 import styles from '../sass/Logo.module.sass';
 import Hidden from "@material-ui/core/Hidden";
 
-const logo = require('../images/logo.png');
+const logo = '/images/logo.png';
 
 const Logo = () => {
     return(

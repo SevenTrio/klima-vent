@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import * as cityActions from '../actions/city';
+import * as cityActions from '../redux/actions/city';
 import City from '../components/City';
 
 

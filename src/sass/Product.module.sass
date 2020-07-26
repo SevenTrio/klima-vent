@@ -80,7 +80,7 @@
     font-size: 20px !important
 
 
-.numberOfRating
+.votes
   margin-left: 8px
 
   line-height: 18px
@@ -89,7 +89,7 @@
   color: color(text, secondary)
 
 
-.row
+.bottomRow
   display: flex
   flex-direction: row
   //justify-content: center
@@ -98,8 +98,9 @@
   margin-top: 32px
 
 
-.price
+.priceRoot
   display: flex
+  align-self: flex-end
   justify-content: flex-end
   flex-direction: column
 
@@ -107,7 +108,7 @@
 .oldPrice
   display: flex
   position: relative
-  opacity: 60%
+  opacity: 70%
 
   margin-right: auto
 
@@ -146,7 +147,7 @@
     font-size: 8px
 
 
-.currentPrice
+.price
   display: flex
 
   line-height: 24px
@@ -158,7 +159,7 @@
     font-size: 18px
 
 
-.currentPriceText:after
+.priceText:after
   content: ' ₴'
 
   white-space: pre

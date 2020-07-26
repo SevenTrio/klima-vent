@@ -15,7 +15,6 @@ const SpecialOffers = () => {
             .then(res => res.json())
             .then(
                 (result) => {
-                    console.log(result);
                     setIsLoaded(true);
                     setProducts(result.products);
                 },
@@ -34,15 +33,17 @@ const SpecialOffers = () => {
     } else {
         return(
             <div className={styles.root}>
-                <div className={styles.headingWrapper}>
-                    <h1 className={styles.heading}>Лидеры продаж</h1>
+                <div className={styles.headingRoot}>
+                    <h1 className={styles.headingContent}>Лидеры продаж</h1>
                 </div>
+
                 <div className={styles.productsList}>
                     {products.slice(0, 8).map((product) =>
                         <Product product={product} key={product.id}/>
                     )}
                 </div>
-                <div className={styles.showMoreWrapper}>
+
+                <div className={styles.showMoreRoot}>
                     <button className={styles.showMoreButton}>Показать все товары</button>
                 </div>
             </div>

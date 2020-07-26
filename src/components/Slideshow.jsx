@@ -9,15 +9,15 @@ const Slideshow = () => {
     // TODO: Заменить изображения и alt в банерах
     const images = [
         {
-            src: require('../images/banners/banner-1.jpg'),
+            src: '/images/banners/banner-1.jpg',
             alt: 'some alt text 1',
         },
         {
-            src: require('../images/banners/banner-2.jpg'),
+            src: '/images/banners/banner-2.jpg',
             alt: 'some alt text 2',
         },
         {
-            src: require('../images/banners/banner-3.jpg'),
+            src: '/images/banners/banner-3.jpg',
             alt: 'some alt text 3'
         },
     ];

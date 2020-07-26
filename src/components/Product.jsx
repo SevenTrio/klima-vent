@@ -6,39 +6,79 @@ import StarBorderIcon from '@material-ui/icons/StarBorder';
 
 import styles from '../sass/Product.module.sass';
 
-const Product = ({ product }) => {
-    let {id, name, rating, numberOfRatings, oldPrice, currentPrice} = product;
+const Image = ({ image }) => {
+    return(
+        <div className={styles.imageWrapper}>
+            <img src={image.uri} alt={image.alt} className={styles.image}/>
+        </div>
+    )
+}
+
+const RatingRow = ({ rating }) => {
+    return(
+        <div className={styles.rating}>
+            <Rating
+                name="customized-empty"
+                className={styles.ratingStars}
+                defaultValue={rating.value}
+                precision={0.5}
+                emptyIcon={<StarBorderIcon fontSize="inherit" />}
+                readOnly
+            />
+            <span className={styles.votes}>{rating.votes} отзывов</span>
+        </div>
+    )
+}
+
+const Price = ({ price }) => {
+    const currentPrice = price.discount === 0 ? price.value : price.value - price.discount;
+    const oldPrice = (
+        price.discount && price.discount !== 0
+        ?
+        <div className={styles.oldPrice}>
+            <span className={styles.oldPriceText}>
+                {
+                    price.value
+                }
+            </span>
+        </div>
+        :
+        null
+    );
 
     return(
+        <div className={styles.priceRoot}>
+            {oldPrice}
+            <div className={styles.price}>
+                <span className={styles.priceText}>
+                    {currentPrice}
+                </span>
+            </div>
+        </div>
+    )
+}
+
+const Product = ({ product }) => {
+    return(
         <div className={styles.root}>
-            <div className={styles.code}>Код товара: {id}</div>
-            <div className={styles.imageWrapper}>
-                <img src={require(`../images/products/product_${id}.jpg`)} alt={name} className={styles.image}/>
+            <div className={styles.code}>
+                Код товара: {product.id}
             </div>
-            <p className={styles.name}>{name}</p>
-            <div className={styles.rating}>
-                <Rating
-                    name="customized-empty"
-                    className={styles.ratingStars}
-                    defaultValue={rating}
-                    precision={0.5}
-                    emptyIcon={<StarBorderIcon fontSize="inherit" />}
-                    readOnly
-                />
-                <span className={styles.numberOfRating}>{numberOfRatings} отзывов</span>
-            </div>
-            <div className={styles.row}>
-                <div className={styles.price}>
-                    <div className={styles.oldPrice}>
-                        <span className={styles.oldPriceText}>{oldPrice}</span>
-                    </div>
-                    <div className={styles.currentPrice}>
-                        <span className={styles.currentPriceText}>{currentPrice}</span>
-                    </div>
-                </div>
+
+            <Image image={product.image}/>
+
+            <p className={styles.name}>
+                {product.name}
+            </p>
+
+            <RatingRow rating={product.rating} />
+
+            <div className={styles.bottomRow}>
+                <Price price={product.price}/>
                 <button className={styles.button}>Купить</button>
             </div>
         </div>
-    )}
+    )
+}
 
 export default Product;

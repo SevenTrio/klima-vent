@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import * as languageActions from '../actions/language';
+import * as languageActions from '../redux/actions/language';
 import Languages from '../components/Languages';
 
 
