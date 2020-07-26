@@ -4,23 +4,18 @@ import { Fade } from 'react-slideshow-image';
 import 'react-slideshow-image/dist/styles.css'
 
 import "../sass/slideshow-fix.css";
+import useAxiosRequest from "../helpers/useAxiosRequest";
 
 const Slideshow = () => {
-    // TODO: Заменить изображения и alt в банерах
-    const images = [
-        {
-            src: '/images/banners/banner-1.jpg',
-            alt: 'some alt text 1',
-        },
-        {
-            src: '/images/banners/banner-2.jpg',
-            alt: 'some alt text 2',
-        },
-        {
-            src: '/images/banners/banner-3.jpg',
-            alt: 'some alt text 3'
-        },
-    ];
+    const [state] = useAxiosRequest(`/api/banners.json`);
+
+    if (state.isFetching) {
+        return null;
+    }
+
+    if (state.error) {
+        return null;
+    }
 
     const slideshowProperties = {
         duration: 7000,
@@ -28,13 +23,14 @@ const Slideshow = () => {
         indicators: true,
     }
 
+    const images = state.responseData
     return (
         <div className="slide-container">
             <Fade {...slideshowProperties}>
                 {images.map((image, index) =>
                     <div key={index} className="each-fade">
                         <div className="image-container">
-                            <img src={image.src} alt={image.alt}/>
+                            <img src={image.url} alt={image.alt}/>
                         </div>
                     </div>
                 )}

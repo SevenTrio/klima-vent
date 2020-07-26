@@ -1,0 +1,14 @@
+[
+     {
+         "url": "/images/banners/banner-1.jpg",
+         "alt": "some alt text 1"
+     },
+     {
+         "url": "/images/banners/banner-2.jpg",
+         "alt": "some alt text 2"
+     },
+     {
+         "url": "/images/banners/banner-3.jpg",
+         "alt": "some alt text 3"
+     }
+ ]

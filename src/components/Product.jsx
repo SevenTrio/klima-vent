@@ -9,7 +9,7 @@ import styles from '../sass/Product.module.sass';
 const Image = ({ image }) => {
     return(
         <div className={styles.imageWrapper}>
-            <img src={image.uri} alt={image.alt} className={styles.image}/>
+            <img src={image.url} alt={image.alt} className={styles.image}/>
         </div>
     )
 }
