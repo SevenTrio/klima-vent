@@ -11,6 +11,7 @@ import Slider from "./Slideshow";
 import Brands from "./Brands"
 import SpecialOffers from "./SpecialOffers";
 import AboutCompany from "./AboutCompany";
+import Footer from "./Footer";
 
 import "../sass/main.sass";
 
@@ -63,6 +64,7 @@ class App extends Component {
                         <SpecialOffers/>
                         <AboutCompany/>
                     </Container>
+                    <Footer/>
                 </ThemeProvider>
             </Fragment>
         );
