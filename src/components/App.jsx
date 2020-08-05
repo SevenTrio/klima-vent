@@ -12,6 +12,7 @@ import Brands from "./Brands"
 import SpecialOffers from "./SpecialOffers";
 import AboutCompany from "./AboutCompany";
 import Footer from "./footer/Footer";
+import MobileFooter from "./footer/MobileFooter";
 
 import "../sass/main.sass";
 
@@ -64,7 +65,12 @@ class App extends Component {
                         <SpecialOffers/>
                         <AboutCompany/>
                     </Container>
-                    <Footer/>
+                    <Hidden smDown>
+                        <Footer/>
+                    </Hidden>
+                    <Hidden mdUp>
+                        <MobileFooter/>
+                    </Hidden>
                 </ThemeProvider>
             </Fragment>
         );

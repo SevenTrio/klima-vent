@@ -1,6 +1,3 @@
-import React from 'react';
-import styles from '../../sass/Footer.module.sass';
-
 const navigationData = [
     {
         title: 'Компания',
@@ -71,31 +68,4 @@ const navigationData = [
     }
 ];
 
-const Navigation = () => {
-    return(
-        <div className={styles.navigation}>
-            {
-                navigationData.map((navItem, index) =>
-                    <div key={index} className={styles.navigationItem}>
-                        <p className={styles.navigationItem__title}>{navItem.title}</p>
-                        <nav>
-                            <ul className={styles.navigationItem__list}>
-                                {
-                                    navItem.list.map((listItem, index_2) =>
-                                        <li key={index_2} className={styles.navigationListItem}>
-                                            <a href={listItem.url} className={styles.navigationListItem__link}>
-                                                {listItem.name}
-                                            </a>
-                                        </li>
-                                    )
-                                }
-                            </ul>
-                        </nav>
-                    </div>
-                )
-            }
-        </div>
-    )
-}
-
-export default Navigation;
+export default navigationData;

@@ -1,0 +1,21 @@
+@import "src/sass/config"
+
+
+.root
+  margin-bottom: 10px
+
+  +to($break_md)
+    margin-bottom: 16px
+
+
+.link
+  font-size: 12px
+  text-decoration: none
+
+  color: color(text, primary)
+
+  &:hover
+    text-decoration: underline
+
+  +to($break_md)
+    font-size: 16px

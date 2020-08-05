@@ -2,16 +2,16 @@ import React from 'react';
 import styles from './Footer.module.sass';
 
 import Container from "@material-ui/core/Container";
+import MobileNavigation from "./navigation/MobileNavigation";
 import Social from "./social/Social";
-import Navigation from "./navigation/Navigation";
 
-const Footer = () => {
+const MobileFooter = () => {
     return(
         <div className={styles.root}>
-            <Container maxWidth="lg">
+            <Container>
                 <div className={styles.content}>
+                    <MobileNavigation/>
                     <Social/>
-                    <Navigation/>
                 </div>
 
                 <div className={styles.bottom}>
@@ -23,4 +23,4 @@ const Footer = () => {
     )
 }
 
-export default Footer;
+export default MobileFooter;
