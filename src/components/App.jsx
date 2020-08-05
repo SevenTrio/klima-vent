@@ -11,7 +11,7 @@ import Slider from "./Slideshow";
 import Brands from "./Brands"
 import SpecialOffers from "./SpecialOffers";
 import AboutCompany from "./AboutCompany";
-import Footer from "./Footer";
+import Footer from "./footer/Footer";
 
 import "../sass/main.sass";
 
