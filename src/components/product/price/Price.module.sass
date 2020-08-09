@@ -1,0 +1,74 @@
+@import "src/sass/config"
+
+
+.priceRoot
+  display: flex
+  align-self: flex-end
+  justify-content: flex-end
+  flex-direction: column
+
+
+.oldPrice
+  display: flex
+  position: relative
+  opacity: 70%
+
+  margin-right: auto
+
+  line-height: 16px
+  font-size: 14px
+  font-weight: 700
+
+  &:after
+    content: ''
+    display: inline
+    position: absolute
+    top: 50%
+    left: 0
+    right: 0
+
+    height: 2px
+
+    transform: translateY(-50%)
+
+    background: #ff090b
+
+  +to($break_lg)
+    line-height: 14px
+    font-size: 12px
+
+
+.oldPriceText:after
+  content: ' ₴'
+
+  white-space: pre
+  line-height: 12px
+  font-size: 10px
+
+  +to($break_lg)
+    line-height: 10px
+    font-size: 8px
+
+
+.price
+  display: flex
+
+  line-height: 24px
+  font-size: 20px
+  font-weight: 700
+
+  +to($break_lg)
+    line-height: 22px
+    font-size: 18px
+
+
+.priceText:after
+  content: ' ₴'
+
+  white-space: pre
+  line-height: 16px
+  font-size: 14px
+
+  +to($break_lg)
+    line-height: 14px
+    font-size: 12px

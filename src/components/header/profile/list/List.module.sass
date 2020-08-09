@@ -1,0 +1,39 @@
+@import "src/sass/config"
+
+
+.root
+  margin: 0
+  padding: 0
+
+  list-style-type: none
+
+
+.listItem
+  display: flex
+  align-items: center
+
+  padding: 10px 16px
+
+  border-top: 1px solid color(grey, 300)
+
+  font-size: 12px
+  text-decoration: none
+  transition: all 0.3s ease
+
+  &:last-child
+    border-bottom: 1px solid color(grey, 300)
+
+
+.listItem__link
+  color: color(link, main)
+
+  &:hover
+    color: color(link, hovered)
+
+
+.listItem__icon
+  display: flex
+
+  margin-left: auto
+
+  font-size: 10px !important

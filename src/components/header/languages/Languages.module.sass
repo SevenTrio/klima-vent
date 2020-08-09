@@ -1,0 +1,48 @@
+@import "src/sass/config"
+
+
+.languages
+  display: flex
+
+
+.languagesItem
+  position: relative
+
+  padding-right: 5px
+  padding-left: 5px
+
+  color: color(primary, contrast-text)
+
+  &:first-child
+    padding-left: 0
+  
+  &:last-child
+    padding-right: 0
+  
+  &:not(:first-child)
+    &::before
+      content: ""
+      display: inline-block
+      position: absolute
+      left: 0
+      top: 2px
+
+      height: 9px
+
+      border-left: 1px solid color(grey, 'A200')
+
+
+.language
+  cursor: pointer
+
+  &:hover
+    text-decoration: underline
+  
+
+.currentLanguage
+  cursor: inherit
+
+  color: color(grey, 'A200')
+
+  &:hover
+    text-decoration: none

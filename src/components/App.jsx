@@ -6,11 +6,11 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import Container from '@material-ui/core/Container';
 import Hidden from '@material-ui/core/Hidden';
 
-import Header from "../containers/Header";
-import Slider from "./Slideshow";
-import Brands from "./Brands"
-import SpecialOffers from "./SpecialOffers";
-import AboutCompany from "./AboutCompany";
+import Header from "./header/Header";
+import Slider from "./slideshow/Slideshow";
+import Brands from "./brands/Brands"
+import SpecialOffers from "./special-offers/SpecialOffers";
+import AboutCompany from "./about-company/AboutCompany";
 import Footer from "./footer/Footer";
 import MobileFooter from "./footer/MobileFooter";
 
@@ -47,10 +47,6 @@ const theme = createMuiTheme({
 
 @withWidth()
 class App extends Component {
-    componentWillMount() {
-
-    }
-
     render() {
         return (
             <Fragment>

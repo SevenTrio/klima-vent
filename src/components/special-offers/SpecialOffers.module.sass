@@ -1,0 +1,64 @@
+@import "src/sass/config"
+
+
+.root
+
+
+.headingRoot
+  display: flex
+  align-items: center
+  justify-content: center
+
+  width: 100%
+  height: 80px
+
+
+.headingContent
+  margin: 0
+
+  font-size: 18px
+  font-weight: 700
+  text-transform: uppercase
+  letter-spacing: 2px
+
+  color: color(text, primary)
+
+
+.productsList
+  display: flex
+  flex-wrap: wrap
+
+
+.showMoreRoot
+  display: flex
+  align-items: center
+  justify-content: center
+
+  width: 100%
+  height: 80px
+
+  border: 1px solid color(gray, 300)
+  border-top: none
+
+  background-color: color(background, paper)
+
+
+.showMoreButton
+  width: 40%
+  height: 40px
+  padding: 6px 20px
+
+  border: none
+  border-radius: 50px
+
+  font-size: 14px
+  font-weight: 600
+
+  color: color(secondary, contrast-text)
+  background-color: color(secondary, main)
+
+  &:hover
+    background-color: color(secondary, dark)
+
+  +to($break_md)
+    width: 50%

@@ -4,6 +4,7 @@ const initialState = {
     // lastname: null,
     name: 'Иван',
     lastname: 'Иванов',
+    authorized: true
 };
 
 export default (state = initialState, action) => {
@@ -14,6 +15,7 @@ export default (state = initialState, action) => {
                 id: action.payload,
                 name: 'Иван',
                 lastname: 'Иванов',
+                authorized: true
             };
         default:
             return state;
