@@ -1,7 +1,7 @@
 @import "src/sass/config"
 
 
-.languages
+.root
   display: flex
 
 
@@ -32,17 +32,16 @@
       border-left: 1px solid color(grey, 'A200')
 
 
-.language
+.languageLink
   cursor: pointer
 
   &:hover
     text-decoration: underline
-  
 
-.currentLanguage
-  cursor: inherit
+.languageLink_active
+    cursor: inherit
 
-  color: color(grey, 'A200')
+    color: color(grey, 'A200')
 
-  &:hover
-    text-decoration: none
+    &:hover
+      text-decoration: none

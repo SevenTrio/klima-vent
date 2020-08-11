@@ -10,7 +10,7 @@ import Logo from "./logo/Logo";
 import MobileMenu from "./mobile-menu/MobileMenu";
 import Search from "./search/Search";
 
-import Languages from "./languages/LanguagesContainer";
+import LanguageSwitcher from "./language-switcher/LanguageSwitcherContainer";
 import City from "./city/CityContainer";
 import Profile from "./profile/ProfileContainer";
 import Catalog from "./catalog/CatalogContainer";
@@ -30,7 +30,7 @@ class Header extends Component {
                     <Hidden smDown>
                         <div className={styles.headerUpper}>
                             <Telephone/>
-                            <Languages/>
+                            <LanguageSwitcher/>
                             <City/>
                             <Profile/>
                         </div>
