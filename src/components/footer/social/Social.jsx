@@ -1,16 +1,19 @@
 import React from 'react';
 import styles from './Social.module.sass';
-import socialData from "../../../data/socialData";
+import footerSocialData from "../../../data/footerSocialData";
 
 import SocialItem from "./social-item/SocialItem";
+import {Translate} from "react-redux-i18n";
 
 const Social = () => {
     return(
         <div className={styles.root}>
-            <p className={styles.title}>Наши соцсети</p>
+            <p className={styles.title}>
+                <Translate value="footer.social"/>
+            </p>
             <ul className={styles.list}>
                 {
-                    socialData.map((socialItem, index) =>
+                    footerSocialData.map((socialItem, index) =>
                         <SocialItem key={index} item={socialItem}/>
                     )
                 }

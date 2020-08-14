@@ -1,9 +1,10 @@
 import React from "react";
 import { makeStyles, createStyles } from '@material-ui/core/styles';
+import { Translate } from 'react-redux-i18n';
+
 import Modal from '@material-ui/core/Modal';
 import TextField from '@material-ui/core/TextField';
 import Autocomplete from '@material-ui/lab/Autocomplete';
-
 
 const useStyles = makeStyles((theme) => createStyles({
     city: {
@@ -46,7 +47,7 @@ const City = ({ setCity, sitiesList, currentCity }) => {
 
     return(
         <div className={classes.city}>
-            Город: <span className={classes.cityName} onClick={handleOpen}>{currentCity.name}</span>
+            <Translate value="city.city"/> <span className={classes.cityName} onClick={handleOpen}>{currentCity.name}</span>
             <Modal
                 open={open}
                 onClose={handleClose}

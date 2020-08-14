@@ -1,16 +1,16 @@
 import React from "react";
 import styles from "./LanguageSwitcher.module.sass";
-import classNames from "classnames/bind";
+import { NavLink } from "react-router-dom";
 
-const LanguageItem = ({ code, active, onClick }) => {
+const LanguageItem = ({ code  }) => {
+    let path = document.location.pathname;
+    let pathArr = path.split('/');
+    pathArr[1] = code.toLowerCase();
+    path = pathArr.join('/');
+
     return (
         <div className={styles.languagesItem}>
-                    <span
-                        className={classNames(styles.languageLink, active && styles.languageLink_active)}
-                        onClick={active ? null : onClick}
-                    >
-                        {code.toUpperCase()}
-                    </span>
+            <NavLink to={path} className={styles.languageLink} activeClassName={styles.languageLink_active}>{code.toUpperCase()}</NavLink>
         </div>
     )
 }

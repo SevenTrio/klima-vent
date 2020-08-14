@@ -3,6 +3,7 @@ import styles from './SpecialOffers.module.sass';
 import useAxiosRequest from "../../helpers/useAxiosRequest";
 
 import Product from "../product/Product";
+import {Translate} from "react-redux-i18n";
 
 const SpecialOffers = () => {
     const [state] = useAxiosRequest(`/api/special-offers.json`);
@@ -20,7 +21,9 @@ const SpecialOffers = () => {
     return(
         <div className={styles.root}>
             <div className={styles.headingRoot}>
-                <h1 className={styles.headingContent}>Лидеры продаж</h1>
+                <h1 className={styles.headingContent}>
+                    <Translate value="special_offers.sales_leaders"/>
+                </h1>
             </div>
 
             <div className={styles.productsList}>
@@ -30,7 +33,9 @@ const SpecialOffers = () => {
             </div>
 
             <div className={styles.showMoreRoot}>
-                <button className={styles.showMoreButton}>Показать все товары</button>
+                <button className={styles.showMoreButton}>
+                    <Translate value="special_offers.show_more"/>
+                </button>
             </div>
         </div>
     )

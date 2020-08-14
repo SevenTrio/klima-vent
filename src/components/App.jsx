@@ -1,16 +1,19 @@
-import React, { Component, Fragment } from 'react';
+import React from 'react';
+import {
+    Route,
+    Switch,
+    BrowserRouter as Router
+} from 'react-router-dom'
+import routes from '../routes'
 
 import withWidth from "@material-ui/core/withWidth";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 import CssBaseline from '@material-ui/core/CssBaseline';
-import Container from '@material-ui/core/Container';
 import Hidden from '@material-ui/core/Hidden';
 
+import LanguageInspector from "./language-inspector/LanguageInspectorContainer";
+
 import Header from "./header/Header";
-import Slider from "./slideshow/Slideshow";
-import Brands from "./brands/Brands"
-import SpecialOffers from "./special-offers/SpecialOffers";
-import AboutCompany from "./about-company/AboutCompany";
 import Footer from "./footer/Footer";
 import MobileFooter from "./footer/MobileFooter";
 
@@ -45,32 +48,35 @@ const theme = createMuiTheme({
     },
 });
 
-@withWidth()
-class App extends Component {
-    render() {
-        return (
-            <Fragment>
-                <CssBaseline/>
-                <ThemeProvider theme={theme}>
-                    <Header/>
-                    <Slider/>
-                    <Container maxWidth="lg">
-                        <Hidden smDown>
-                            <Brands/>
-                        </Hidden>
-                        <SpecialOffers/>
-                        <AboutCompany/>
-                    </Container>
-                    <Hidden smDown>
-                        <Footer/>
-                    </Hidden>
-                    <Hidden mdUp>
-                        <MobileFooter/>
-                    </Hidden>
-                </ThemeProvider>
-            </Fragment>
-        );
-    }
+const App = () => {
+    return (
+        <Router>
+            <CssBaseline/>
+            <ThemeProvider theme={theme}>
+                <Header/>
+
+                    <Switch>
+                        {routes.map((route, index) => (
+                            <Route
+                                key={index}
+                                path={route.path}
+                                exact={route.exact}
+                                render={(routeProps) =>
+                                    <LanguageInspector component={route.component} isRedirect={route.isRedirect} locale={routeProps.match.params.locale}/>
+                                }
+                            />
+                        ))}
+                    </Switch>
+
+                <Hidden smDown>
+                    <Footer/>
+                </Hidden>
+                <Hidden mdUp>
+                    <MobileFooter/>
+                </Hidden>
+            </ThemeProvider>
+        </Router>
+    );
 }
 
-export default App;
+export default withWidth()(App);

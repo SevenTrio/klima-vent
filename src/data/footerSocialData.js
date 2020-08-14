@@ -1,31 +1,29 @@
-import React from "react";
-
 import FacebookIcon from "@material-ui/icons/Facebook";
 import InstagramIcon from "@material-ui/icons/Instagram";
 import TwitterIcon from "@material-ui/icons/Twitter";
 import TelegramIcon from "@material-ui/icons/Telegram";
 
-const socialData = [
+const footerSocialData = [
     {
         name: 'facebook',
         url: 'https://facebook.com/',
-        icon: <FacebookIcon style={{fontSize: '24px', color: 'inherit'}}/>
+        icon: FacebookIcon
     },
     {
         name: 'instagram',
         url: 'https://www.instagram.com/',
-        icon: <InstagramIcon style={{fontSize: '24px', color: 'inherit'}}/>
+        icon: InstagramIcon
     },
     {
         name: 'twitter',
         url: 'https://twitter.com/',
-        icon: <TwitterIcon style={{fontSize: '24px', color: 'inherit'}}/>
+        icon: TwitterIcon
     },
     {
         name: 'telegram',
         url: 'https://web.telegram.org/',
-        icon: <TelegramIcon style={{fontSize: '24px', color: 'inherit'}}/>
+        icon: TelegramIcon
     }
 ];
 
-export default socialData;
+export default footerSocialData;

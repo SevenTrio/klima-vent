@@ -2,12 +2,14 @@ import React from 'react';
 import styles from './NavigationItem.module.sass';
 
 import ListItem from './list-item/ListItem'
+import {Translate} from "react-redux-i18n";
 
 const NavigationItem = ({ item }) => {
-    console.log(item);
     return(
         <div className={styles.root}>
-            <p className={styles.title}>{item.title}</p>
+            <p className={styles.title}>
+                <Translate value={item.title}/>
+            </p>
             <nav>
                 <ul className={styles.list}>
                     {

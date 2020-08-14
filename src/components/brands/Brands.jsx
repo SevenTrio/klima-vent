@@ -2,6 +2,8 @@ import React from 'react';
 import styles from './Brands.module.sass';
 import useAxiosRequest from "../../helpers/useAxiosRequest";
 
+import LocalizedLink from "../localized-link/LocalizedLinkContainer";
+
 const Brands = () => {
     const [state] = useAxiosRequest(`/api/brands.json`);
 
@@ -17,9 +19,9 @@ const Brands = () => {
     return(
         <div className={styles.root}>
             {brands.map((brand, index) =>
-                <a key={index} href={brand.link} className={styles.item}>
+                <LocalizedLink key={index} to={brand.link} className={styles.item}>
                     <img src={brand.image.url} alt={brand.image.alt} className={styles.logo}/>
-                </a>
+                </LocalizedLink>
             )}
         </div>
     )

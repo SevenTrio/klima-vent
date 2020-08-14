@@ -6,6 +6,7 @@ import Image from "./image/Image";
 import Name from "./name/Name";
 import Rating from "./rating/Rating";
 import Price from "./price/Price";
+import {Translate} from "react-redux-i18n";
 
 const Product = ({ product }) => {
     return(
@@ -17,7 +18,9 @@ const Product = ({ product }) => {
 
             <div className={styles.bottomRow}>
                 <Price price={product.price}/>
-                <button className={styles.button}>Купить</button>
+                <button className={styles.button}>
+                    <Translate value="product.buy"/>
+                </button>
             </div>
         </div>
     )

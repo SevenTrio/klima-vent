@@ -2,35 +2,39 @@ import React from "react";
 import styles from "./List.module.sass";
 
 import ListItem from "./ListItem";
-import Logout from "./Logout";
 
 const loginProps = [
     {
-        label: 'Вход',
+        title: 'profile.login',
         url: '/login'
     },
     {
-        label: 'Регистрация',
-        url: '/registration'
+        title: 'profile.register',
+        url: '/register'
     }
 ];
 
 const userProps = [
     {
-        label: 'Личные данные',
-        url: '/'
+        title: 'profile.personal_data',
+        url: '#'
     },
     {
-        label: 'Список желаний',
-        url: '/'
+        title: 'profile.wish_list',
+        url: '#'
     },
     {
-        label: 'Корзина',
-        url: '/'
+        title: 'profile.cart',
+        url: '#'
     },
     {
-        label: 'Мои покупки',
-        url: '/'
+        title: 'profile.my_purchases',
+        url: '#'
+    },
+    {
+        title: 'profile.logout',
+        url: '#',
+        withoutIcon: true
     }
 ];
 
@@ -43,9 +47,6 @@ const List = ({ authorized }) => {
                 listProps.map((listItem, index) =>
                     <ListItem key={index} item={listItem}/>
                 )
-            }
-            {
-                authorized ? <Logout/> : null
             }
         </ul>
     )

@@ -1,18 +1,14 @@
 import React from 'react';
 import styles from './LanguageSwitcher.module.sass';
+import { supportedLocales } from "../../../i18n/i18n.config";
 
 import LanguageItem from './LanguageItem'
 
-const LanguageSwitcher = ({ locale, supportedLocales,  setLocaleWithFallback }) => {
-    const handleLanguageLinkClick = (e, code) => {
-        e.preventDefault();
-        setLocaleWithFallback(code);
-    };
-
+const LanguageSwitcher = () => {
     return(
         <div className={styles.root}>
             {Object.keys(supportedLocales).map(code => (
-                <LanguageItem key={code} code={code} active={code === locale} onClick={e => handleLanguageLinkClick(e, code)}/>
+                <LanguageItem key={code} code={code}/>
             ))}
         </div>
     )

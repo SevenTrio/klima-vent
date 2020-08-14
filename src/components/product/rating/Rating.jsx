@@ -3,6 +3,7 @@ import styles from "./Rating.module.sass";
 
 import RatingIndicators from "@material-ui/lab/Rating";
 import StarBorderIcon from "@material-ui/icons/StarBorder";
+import {Translate} from "react-redux-i18n";
 
 const Rating = ({ rating }) => {
     return(
@@ -15,7 +16,9 @@ const Rating = ({ rating }) => {
                 emptyIcon={<StarBorderIcon fontSize="inherit" />}
                 readOnly
             />
-            <span className={styles.votes}>{rating.votes} отзывов</span>
+            <span className={styles.votes}>
+                <Translate value="product.votes" votes={rating.votes}/>
+            </span>
         </div>
     )
 }

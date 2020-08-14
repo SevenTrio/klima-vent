@@ -1,7 +1,7 @@
 [  
   {
     "id": "000001",
-    "name": "Лучший кондиционер рх321-545",
+    "name": "product.name",
     "rating": {
       "value": 3.3,
       "votes": 125
@@ -12,12 +12,12 @@
     },
     "image": {
         "url": "../images/products/product_000001.jpg",
-        "alt": "Лучший кондиционер рх321-545"
+        "alt": "product.name"
     }
   },
   {
     "id": "000002",
-    "name": "Лучший кондиционер рх321-545",
+    "name": "product.name",
     "rating": {
       "value": 2,
       "votes": 97
@@ -28,12 +28,12 @@
     },
     "image": {
         "url": "../images/products/product_000002.jpg",
-        "alt": "Лучший кондиционер рх321-545"
+        "alt": "product.name"
     }
   },
   {
     "id": "000003",
-    "name": "Лучший кондиционер рх321-545",
+    "name": "product.name",
     "rating": {
       "value": 4.5,
       "votes": 105
@@ -44,12 +44,12 @@
     },
     "image": {
         "url": "../images/products/product_000003.jpg",
-        "alt": "Лучший кондиционер рх321-545"
+        "alt": "product.name"
     }
   },
   {
     "id": "000004",
-    "name": "Лучший кондиционер рх321-545",
+    "name": "product.name",
     "rating": {
       "value": 3.75,
       "votes": 156
@@ -60,12 +60,12 @@
     },
     "image": {
         "url": "../images/products/product_000004.jpg",
-        "alt": "Лучший кондиционер рх321-545"
+        "alt": "product.name"
     }
   },
   {
     "id": "000005",
-    "name": "Лучший кондиционер рх321-545",
+    "name": "product.name",
     "rating": {
       "value": 1,
       "votes": 426
@@ -76,12 +76,12 @@
     },
     "image": {
         "url": "../images/products/product_000005.jpg",
-        "alt": "Лучший кондиционер рх321-545"
+        "alt": "product.name"
     }
   },
   {
     "id": "000006",
-    "name": "Лучший кондиционер рх321-545",
+    "name": "product.name",
     "rating": {
       "value": 5,
       "votes": 127
@@ -92,12 +92,12 @@
     },
     "image": {
         "url": "../images/products/product_000006.jpg",
-        "alt": "Лучший кондиционер рх321-545"
+        "alt": "product.name"
     }
   },
   {
     "id": "000007",
-    "name": "Лучший кондиционер рх321-545",
+    "name": "product.name",
     "rating": {
       "value": 4.5,
       "votes": 88
@@ -108,12 +108,12 @@
     },
     "image": {
         "url": "../images/products/product_000007.jpg",
-        "alt": "Лучший кондиционер рх321-545"
+        "alt": "product.name"
     }
   },
   {
     "id": "000008",
-    "name": "Лучший кондиционер рх321-545",
+    "name": "product.name",
     "rating": {
       "value": 2.5,
       "votes": 147
@@ -124,12 +124,12 @@
     },
     "image": {
         "url": "../images/products/product_000008.jpg",
-        "alt": "Лучший кондиционер рх321-545"
+        "alt": "product.name"
     }
   },
   {
     "id": "000009",
-    "name": "Лучший кондиционер рх321-545",
+    "name": "product.name",
     "rating": {
       "value": 3.85,
       "votes": 225
@@ -140,12 +140,12 @@
     },
     "image": {
         "url": "../images/products/product_000009.jpg",
-        "alt": "Лучший кондиционер рх321-545"
+        "alt": "product.name"
     }
   },
   {
     "id": "000010",
-    "name": "Лучший кондиционер рх321-545",
+    "name": "product.name",
     "rating": {
       "value": 3.85,
       "votes": 225
@@ -156,7 +156,7 @@
     },
     "image": {
       "url": "../images/products/product_000010.jpg",
-      "alt": "Лучший кондиционер рх321-545"
+      "alt": "product.name"
     }
   }
 ]

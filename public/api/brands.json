@@ -1,34 +1,34 @@
 [
      {
-         "link": "/",
+         "link": "#",
          "image": {
              "url": "/images/brands/cooperandhunter.png",
              "alt": "Cooper and Hunter"
          }
      },
      {
-         "link": "/",
+         "link": "#",
          "image": {
              "url": "/images/brands/midea.svg",
              "alt": "Midea"
          }
      },
      {
-         "link": "/",
+         "link": "#",
          "image": {
              "url": "/images/brands/hisense.png",
              "alt": "Hisense"
          }
      },
      {
-         "link": "/",
+         "link": "#",
          "image": {
              "url": "/images/brands/idea.svg",
              "alt": "Idea"
          }
      },
      {
-         "link": "/",
+         "link": "#",
          "image": {
              "url": "/images/brands/samurai.svg",
              "alt": "Samurai"
