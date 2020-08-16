@@ -64,9 +64,9 @@ class RippleButton extends React.Component {
     }
 
     render() {
-        const {children = null, classes = "", onClickHandler = null} = this.props;
+        const {children = null, className, ...rest} = this.props;
         return (
-            <div ref="targetElement" className={classNames(styles.ripple, classes)} onClick={onClickHandler}>
+            <div ref="targetElement" className={classNames(styles.ripple, className)} {...rest}>
                 {children}
                 <div className={styles.rippleContainer} onMouseDown={this.showRipple} onMouseUp={() => this.callCleanUp(this.cleanUp, 1250)}>
                     {this.renderRippleSpan()}

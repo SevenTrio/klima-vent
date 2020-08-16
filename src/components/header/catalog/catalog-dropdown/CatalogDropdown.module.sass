@@ -1,0 +1,95 @@
+@import "src/sass/config"
+
+
++emergence(0, -20px)
+
+
+.root
+  position: absolute
+  top: 64px
+  left: 0
+  z-index: 100
+
+  border-radius: 5px
+
+  width: 100%
+  height: 150px
+
+  animation: emergence 0.5s 1
+
+
+.menu
+  position: relative
+  width: 303px
+
+  height: 100%
+  padding-top: 16px
+  padding-bottom: 16px
+
+  border-radius: 3px
+
+  background-color: color(background, paper)
+
+
+.menu_additional
+  position: absolute
+  top: 0
+  left: 0
+
+  border-left: 1px solid color(grey, 200)
+  border-radius: 0 3px 3px 0
+
+  margin-left: 300px
+
+
+.menu__list
+  margin: 0
+  padding: 0
+
+  list-style-type: none
+
+
+.menu__listItem
+
+
+.menu__listItem_active
+  background-color: color(grey, 200)
+
+
+.listItem__link
+  display: block
+  position: relative
+  padding: 0 52px 0 20px
+
+  font-size: 14px
+  line-height: 30px
+  text-decoration: none
+
+  color: color(text, primary)
+
+  &:hover
+    color: color(link, hovered)
+    text-decoration: underline
+
+
+.listItem__categoriesLink
+  padding: 0 52px
+
+  color: color(link, main)
+
+
+.categoriesLink__icon
+  position: absolute
+  top: 5px
+  left: 20px
+
+  font-size: 20px !important
+
+  color: color(grey, 500)
+
+
+.link__icon
+  position: absolute
+  top: 9px
+  right: 23px
+  font-size: 12px !important

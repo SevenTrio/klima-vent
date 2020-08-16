@@ -33,3 +33,11 @@
     @content
   @keyframes #{$name}
     @content
+
+=emergence($X, $Y)
+  +keyframes(emergence)
+    0%
+      transform: translate($X, $Y)
+      opacity: 0
+    100%
+      opacity: 1
