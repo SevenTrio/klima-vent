@@ -1,11 +1,11 @@
 const initialState = {
-    currentCityId: 2,
-    sitiesList: [
-        { id: 0, name: 'Киев' },
-        { id: 1, name: 'Днепр' },
-        { id: 2, name: 'Харьков' },
-        { id: 3, name: 'Павлоград' },
-    ]
+    currentCity: {
+        id: "115",
+        parent_id: "5",
+        name: "Киев",
+        areas: [ ]
+    },
+    citiesList: []
 };
 
 export default (state = initialState, action) => {
@@ -13,7 +13,12 @@ export default (state = initialState, action) => {
         case "SET_CITY":
             return {
                 ...state,
-                currentCityId: action.payload,
+                currentCity: action.payload
+            };
+        case "SET_CITIES-LIST":
+            return {
+                ...state,
+                citiesList: action.payload
             };
         default:
             return state;

@@ -1,76 +1,94 @@
-import React from "react";
-import { makeStyles, createStyles } from '@material-ui/core/styles';
-import { Translate } from 'react-redux-i18n';
+import React, { useEffect } from "react";
+import styles from './City.module.sass'
 
+import { Translate, I18n } from 'react-redux-i18n';
 import Modal from '@material-ui/core/Modal';
 import TextField from '@material-ui/core/TextField';
-import Autocomplete from '@material-ui/lab/Autocomplete';
+import Autocomplete, {createFilterOptions} from '@material-ui/lab/Autocomplete';
+import CircularProgress from '@material-ui/core/CircularProgress';
+import useAxiosRequest from "../../../helpers/useAxiosRequest";
 
-const useStyles = makeStyles((theme) => createStyles({
-    city: {
-        marginLeft: 30
-    },
-    cityName: {
-        // fontWeight: 600,
-        borderBottom: '1px dashed '+theme.palette.primary.contrastText,
-        cursor: 'pointer',
-        '&:hover': {
-            borderBottom: 'none',
-            paddingBottom: 1,
-        }
-    },
-    modal: {
-        position: 'absolute',
-        top: 50,
-        left: 50,
-        width: 400,
-        backgroundColor: theme.palette.background.paper,
-        border: '2px solid #000',
-        boxShadow: theme.shadows[5],
-        padding: theme.spacing(2, 4, 3),
-    }
-}));
+const filterOptions = createFilterOptions({
+    matchFrom: 'start',
+    stringify: (option) => option.name,
+});
 
-const City = ({ setCity, sitiesList, currentCity }) => {
-    const classes = useStyles();
-    const [open, setOpen] = React.useState(false);
+const City = ({ currentCity, setCity, citiesList, setCitiesList }) => {
+    const [modalOpen, setModalOpen] = React.useState(false);
     const [value, setValue] = React.useState(currentCity);
 
-    const handleOpen = () => {
-        setOpen(true);
+    const [cities] = useAxiosRequest(`https://api.hh.ru/areas/5d`);
+
+    useEffect(() => {
+        if (cities.responseData) {
+            let optionsArr = [];
+
+            cities.responseData.areas.forEach((item) => {
+                if (item.areas.length !== 0) {
+                    item.areas.forEach((innerItem) => {
+                        optionsArr.push(innerItem);
+                    })
+                } else optionsArr.push(item);
+            })
+
+            optionsArr.sort((a, b) => (a.name > b.name) ? 1 : -1)
+
+            setCitiesList(optionsArr)
+        }
+    }, [cities, setCitiesList])
+
+    const handleModalOpen = () => {
+        setModalOpen(true);
     };
 
-    const handleClose = () => {
-        setOpen(false);
-        currentCity.id !== value.id && setCity(value.id);
+    const handleModalClose = () => {
+        setModalOpen(false);
+        currentCity.id !== value.id && setCity(value);
     };
 
     return(
-        <div className={classes.city}>
-            <Translate value="city.city"/> <span className={classes.cityName} onClick={handleOpen}>{currentCity.name}</span>
+        <div className={styles.city}>
+            <Translate value="city.title"/> <span className={styles.city__name} onClick={handleModalOpen}>{currentCity.name}</span>
             <Modal
-                open={open}
-                onClose={handleClose}
-                aria-labelledby="simple-modal-title"
-                aria-describedby="simple-modal-description"
+                open={modalOpen}
+                onClose={handleModalClose}
             >
-                <div className={classes.modal}>
-                    <h2 id="simple-modal-title">Text in a modal</h2>
-                    <p id="simple-modal-description">
-                        Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-                    </p>
+                <div className={styles.modal}>
+                    <h2><Translate value="city.choose_city"/></h2>
+                    <p><Translate value="city.help_message"/></p>
 
                     <Autocomplete
-                        id="combo-box-demo"
-                        options={sitiesList}
+                        className={styles.autocomplete}
+                        getOptionSelected={(option, value) => option.name === value.name}
+                        getOptionLabel={(option) => option.name}
+                        groupBy={(option) => option.name[0].toUpperCase()}
+                        filterOptions={filterOptions}
+                        filterSelectedOptions={true}
+                        options={citiesList}
                         value={value}
                         onChange={(event, newValue) => {
                             newValue !== null && setValue(newValue);
                         }}
-                        getOptionLabel={(option) => option.name}
-                        style={{ width: 300 }}
-                        renderInput={(params) => <TextField {...params} label="Combo box" variant="outlined" />}
+                        loading={cities.isFetching}
+                        loadingText={I18n.t("city.loading")}
+                        renderInput={(params) => (
+                            <TextField
+                                {...params}
+                                label={I18n.t("city.label")}
+                                variant="outlined"
+                                InputProps={{
+                                    ...params.InputProps,
+                                    endAdornment: (
+                                        <React.Fragment>
+                                            {cities.isFetching ? <CircularProgress color="inherit" size={20} /> : null}
+                                            {params.InputProps.endAdornment}
+                                        </React.Fragment>
+                                    ),
+                                }}
+                            />
+                        )}
                     />
+                    {cities.error ? <p className={styles.error}><Translate value="city.error_message"/></p> : null}
                 </div>
             </Modal>
         </div>
@@ -78,5 +96,3 @@ const City = ({ setCity, sitiesList, currentCity }) => {
 };
 
 export default City;
-
-

@@ -6,9 +6,8 @@ import City from './City';
 
 
 const mapStateToProps = ({ city }) => ({
-    sitiesList: city.sitiesList,
-    currentCityId: city.currentCityId,
-    currentCity: city.sitiesList[city.currentCityId],
+    citiesList: city.citiesList,
+    currentCity: city.currentCity,
 });
 
 const mapDispatchToProps = dispatch => ({

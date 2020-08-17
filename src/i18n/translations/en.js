@@ -3,7 +3,12 @@ const en = {
         name: "KlimaVent"
     },
     city: {
-        city: "City:",
+        title: "City:",
+        choose_city: "Choose your city!",
+        help_message: "If you could not find your city - try to look for the closest one to you.",
+        label: "City",
+        loading: "Loading...",
+        error_message: "There was an error loading the city list, please try again later",
     },
     profile: {
         login: "Login",

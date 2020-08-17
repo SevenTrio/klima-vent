@@ -1,0 +1,46 @@
+@import "src/sass/config"
+
+
+.city
+  margin-left: 30px
+
+.city__name
+  border-bottom: 1px dashed color(primary, contrast-text)
+  cursor: pointer
+  &:hover
+    border-bottom: none
+    padding-bottom: 1px
+
+
+.modal
+  position: absolute
+  top: 30%
+  left: 50%
+  margin-right: -50%
+  transform: translate(-50%, -50%)
+
+  border-radius: 5px
+
+  width: 700px
+  padding: 30px 50px
+
+  background-color: color(background, paper)
+  box-shadow: shadows(5)
+
+  &:focus
+    outline: none
+
+
+.autocomplete
+  margin-top: 50px
+  margin-bottom: 20px
+
+  width: 300px
+
+
+.error
+  //margin-top: 20px
+
+  font-size: 14px
+
+  color: color(error, dark)

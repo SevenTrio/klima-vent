@@ -1,4 +1,9 @@
-export const setCity = id => ({
+export const setCity = city => ({
     type: "SET_CITY",
-    payload: id
+    payload: city
+});
+
+export const setCitiesList = cities => ({
+    type: "SET_CITIES-LIST",
+    payload: cities
 });
