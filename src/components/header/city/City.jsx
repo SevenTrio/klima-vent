@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { Fragment, useEffect } from "react";
 import styles from './City.module.sass'
 
 import { Translate, I18n } from 'react-redux-i18n';
@@ -17,7 +17,7 @@ const City = ({ currentCity, setCity, citiesList, setCitiesList }) => {
     const [modalOpen, setModalOpen] = React.useState(false);
     const [value, setValue] = React.useState(currentCity);
 
-    const [cities] = useAxiosRequest(`https://api.hh.ru/areas/5d`);
+    const [cities] = useAxiosRequest(`https://api.hh.ru/areas/5`);
 
     useEffect(() => {
         if (cities.responseData) {
@@ -47,8 +47,10 @@ const City = ({ currentCity, setCity, citiesList, setCitiesList }) => {
     };
 
     return(
-        <div className={styles.city}>
-            <Translate value="city.title"/> <span className={styles.city__name} onClick={handleModalOpen}>{currentCity.name}</span>
+        <Fragment>
+            <div className={styles.title}>
+                <Translate value="city.title"/> <span className={styles.name} onClick={handleModalOpen}>{currentCity.name}</span>
+            </div>
             <Modal
                 open={modalOpen}
                 onClose={handleModalClose}
@@ -58,7 +60,7 @@ const City = ({ currentCity, setCity, citiesList, setCitiesList }) => {
                     <p><Translate value="city.help_message"/></p>
 
                     <Autocomplete
-                        className={styles.autocomplete}
+                        className={styles.modal__autocomplete}
                         getOptionSelected={(option, value) => option.name === value.name}
                         getOptionLabel={(option) => option.name}
                         groupBy={(option) => option.name[0].toUpperCase()}
@@ -88,10 +90,10 @@ const City = ({ currentCity, setCity, citiesList, setCitiesList }) => {
                             />
                         )}
                     />
-                    {cities.error ? <p className={styles.error}><Translate value="city.error_message"/></p> : null}
+                    {cities.error ? <p className={styles.modal__error}><Translate value="city.error_message"/></p> : null}
                 </div>
             </Modal>
-        </div>
+        </Fragment>
     )
 };
 

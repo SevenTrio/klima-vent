@@ -102,6 +102,10 @@ const en = {
         social: "Our social networks",
         copyright: "All rights reserved LLC «КЛИМА ВЕНТ», 2020",
         developer: "Design and development - "
+    },
+    modal_plug: {
+        message: "Sorry, this content is still under construction!",
+        close: "Close"
     }
 };
 
