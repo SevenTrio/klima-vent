@@ -15,6 +15,7 @@ const ua = {
         register: "Зареєструватися",
         personal_data: "Особисті дані",
         wish_list: "Список бажань",
+        compare: "Порівняння",
         cart: "Кошик",
         my_purchases: "Мої покупки",
         logout: "Вихід",

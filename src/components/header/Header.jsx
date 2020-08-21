@@ -12,7 +12,7 @@ import Search from "./search/SearchContainer";
 
 import LanguageSwitcher from "./language-switcher/LanguageSwitcher";
 import City from "./city/CityContainer";
-import Profile from "./profile/ProfileContainer";
+import Profile from "./profile-menu/ProfileMenuContainer";
 import Catalog from "./catalog/CatalogContainer";
 import Compare from "./compare/CompareContainer";
 import WishList from "./wishlist/WishListContainer";
@@ -33,7 +33,7 @@ const Header = () => {
 
                 <div className={styles.headerContent}>
                     <Hidden smDown>
-                        <Logo/>
+                        <Logo classes={{companyName: styles.companyName}}/>
                     </Hidden>
                     <Hidden mdUp>
                         <MobileMenu/>

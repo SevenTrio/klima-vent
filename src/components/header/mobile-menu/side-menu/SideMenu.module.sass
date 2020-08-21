@@ -1,0 +1,55 @@
+@import "src/sass/config"
+
+
+.root
+  position: fixed
+  overflow-y: scroll
+  top: 0
+  left: 0
+  z-index: 1000
+
+  height: 100vh
+  width: 330px
+  max-width: 100vw
+
+  background-color: color(background, paper)
+
+
+.appBar
+  display: flex !important
+  flex-direction: row !important
+  align-items: center !important
+  justify-content: start !important
+  position: static !important
+
+  height: 56px
+
+
+.logo
+  display: flex
+
+  margin-right: 8px
+  margin-left: auto
+
+
+.logo__image
+  width: 24px
+  height: 24px
+
+
+.logo__companyName
+  margin-left: 3px
+  line-height: 24px
+  font-size: 16px
+
+
+.backButton
+  display: flex
+
+  padding: 8px !important
+
+
+.backButtonIcon
+  font-size: 26px !important
+
+  color: color(primary, contrast-text)

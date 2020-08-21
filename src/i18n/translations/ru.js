@@ -15,6 +15,7 @@ const ru = {
         register: "Зарегистрироваться",
         personal_data: "Личные данные",
         wish_list: "Список желаний",
+        compare: "Сравнение",
         cart: "Корзина",
         my_purchases: "Мои покупки",
         logout: "Выход",

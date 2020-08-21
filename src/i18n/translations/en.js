@@ -15,6 +15,7 @@ const en = {
         register: "Register",
         personal_data: "Personal data",
         wish_list: "Wish list",
+        compare: "Compare",
         cart: "Cart",
         my_purchases: "My purchases",
         logout: "Logout",

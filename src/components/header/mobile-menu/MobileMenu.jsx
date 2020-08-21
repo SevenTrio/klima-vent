@@ -1,15 +1,28 @@
-import React, { Fragment } from 'react';
+import React, {Fragment, useState} from 'react';
 import styles from './MobileMenu.module.sass';
 
 import IconButton from "@material-ui/core/IconButton";
-import MenuRoundedIcon from '@material-ui/icons/MenuRounded';
+import MenuIcon from '@material-ui/icons/MenuRounded';
+import SideMenu from "./side-menu/SideMenu";
 
 const MobileMenu = () => {
+    const [open, setOpen] = useState(false);
+
+    const handleOpen = () => {
+        setOpen(true);
+    };
+
+    const handleClose = () => {
+        setOpen(false);
+    };
+
     return(
         <Fragment>
-            <IconButton className={styles.mobileMenuButton}>
-                <MenuRoundedIcon className={styles.mobileMenuIcon}/>
+            <IconButton className={styles.mobileMenuButton} onClick={handleOpen}>
+                <MenuIcon className={styles.mobileMenuIcon}/>
             </IconButton>
+
+            {open && <SideMenu handleClose={handleClose}/>}
         </Fragment>
     )
 }

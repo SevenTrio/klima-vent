@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import Profile from './Profile';
+import ProfileMenu from './ProfileMenu';
 import {bindActionCreators} from "redux";
 import * as profileActions from "../../../redux/actions/profile";
 
@@ -14,4 +14,4 @@ const mapDispatchToProps = dispatch => ({
 export default connect(
     mapStateToProps,
     mapDispatchToProps,
-)(Profile);
+)(ProfileMenu);

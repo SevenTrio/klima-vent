@@ -1,9 +1,9 @@
 import React from 'react';
-import styles from './Profile.module.sass'
+import styles from './ProfileMenu.module.sass'
 
 import List from "./list/List";
 
-const Profile = ({ user }) => {
+const ProfileMenu = ({ user }) => {
     const [open, setOpen] = React.useState(false);
 
     const handleOpen = () => {
@@ -33,4 +33,4 @@ const Profile = ({ user }) => {
     )
 }
 
-export default Profile;
+export default ProfileMenu;
