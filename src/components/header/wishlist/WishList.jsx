@@ -5,15 +5,14 @@ import IconButton from '@material-ui/core/IconButton';
 import FavoriteIcon from '@material-ui/icons/FavoriteBorder';
 import InDevelopingModal from "../../in-developing-modal/InDevelopingModal";
 
-const WishList = () => {
-    const [modalOpen, setModalOpen] = React.useState(false);
-
+const WishList = ({wishlistOpen, setWishlistOpen}) => {
+    
     const handleModalOpen = () => {
-        setModalOpen(true);
+        setWishlistOpen(true);
     };
 
     const handleModalClose = () => {
-        setModalOpen(false);
+        setWishlistOpen(false);
     };
 
     return(
@@ -23,7 +22,7 @@ const WishList = () => {
             </IconButton>
 
             {/*TODO: Develop WishListModal*/}
-            <InDevelopingModal open={modalOpen} handleClose={handleModalClose}/>
+            <InDevelopingModal open={wishlistOpen} handleClose={handleModalClose}/>
         </Fragment>
     )
 }

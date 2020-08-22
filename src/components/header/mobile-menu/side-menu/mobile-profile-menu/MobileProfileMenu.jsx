@@ -1,12 +1,63 @@
 import React from "react";
 import styles from './MobileProfileMenu.module.sass';
 
-import { loginProps, userProps } from "./mobileProfileMenu.data";
 import LocalizedLink from "../../../../localized-link/LocalizedLinkContainer";
 import {Translate} from "react-redux-i18n";
+import ExitToAppIcon from "@material-ui/icons/ExitToApp";
+import AccountCircleIcon from "@material-ui/icons/AccountCircleRounded";
+import CompareIcon from "../../../../compareIcon/CompareIcon";
+import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorderRounded";
+import ShoppingCartIcon from "@material-ui/icons/ShoppingCartRounded";
 
-const MobileProfileMenu = ({ user }) => {
-    const { authorized } = user;
+const MobileProfileMenu = ({ authorized, setCartOpen, setCompareOpen, setWishlistOpen }) => {
+    const loginProps = [
+        {
+            title: 'profile.login',
+            icon: ExitToAppIcon,
+            type: 'link',
+            url: '/login'
+        },
+        {
+            title: 'profile.register',
+            icon: AccountCircleIcon,
+            type: 'link',
+            url: '/register'
+        }
+    ];
+
+    const userProps = [
+        {
+            title: 'profile.personal_data',
+            icon: AccountCircleIcon,
+            type: 'link',
+            url: '#'
+        },
+        {
+            title: 'profile.compare',
+            icon: CompareIcon,
+            type: 'button',
+            onClick: () => setCompareOpen(true)
+        },
+        {
+            title: 'profile.wish_list',
+            icon: FavoriteBorderIcon,
+            type: 'button',
+            onClick: () => setWishlistOpen(true)
+        },
+        {
+            title: 'profile.cart',
+            icon: ShoppingCartIcon,
+            type: 'button',
+            onClick: () => setCartOpen(true)
+        },
+        {
+            title: 'profile.logout',
+            type: 'button',
+            onClick: () => {},
+            withoutIcon: true,
+        }
+    ];
+
     const listProps = authorized ? userProps : loginProps;
 
     return(
@@ -18,10 +69,18 @@ const MobileProfileMenu = ({ user }) => {
                             const {icon: Icon} = listItem
                             return(
                                 <li key={index} className={styles.listItem}>
-                                    <LocalizedLink to={listItem.url} className={styles.listItem__link}>
-                                        { listItem.withoutIcon ? null : <Icon className={styles.listItem__icon}/> }
-                                        <Translate value={listItem.title}/>
-                                    </LocalizedLink>
+                                    {
+                                        listItem.type === 'link' ?
+                                            <LocalizedLink to={listItem.url} className={styles.listItem__link}>
+                                                { listItem.withoutIcon ? null : <Icon className={styles.listItem__icon}/> }
+                                                <Translate value={listItem.title}/>
+                                            </LocalizedLink>
+                                            :
+                                            <div onClick={listItem.onClick} className={styles.listItem__link}>
+                                                { listItem.withoutIcon ? null : <Icon className={styles.listItem__icon}/> }
+                                                <Translate value={listItem.title}/>
+                                            </div>
+                                    }
                                 </li>
                             )
                         })
@@ -32,4 +91,4 @@ const MobileProfileMenu = ({ user }) => {
     )
 }
 
-export default MobileProfileMenu
+export default MobileProfileMenu;

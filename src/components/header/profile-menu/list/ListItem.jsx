@@ -8,10 +8,19 @@ import LocalizedLink from "../../../localized-link/LocalizedLinkContainer";
 const List = ({ item }) => {
     return(
         <li className={styles.listItem}>
-            <LocalizedLink to={item.url} className={styles.listItem__link}>
-                <Translate value={item.title}/>
-                { item.withoutIcon ? null : <ArrowForwardIosIcon className={styles.listItem__icon}/> }
-            </LocalizedLink>
+            {
+                item.type === 'link' ?
+                    <LocalizedLink to={item.url} className={styles.listItem__link}>
+                        <Translate value={item.title}/>
+                        { item.withoutIcon ? null : <ArrowForwardIosIcon className={styles.listItem__icon}/> }
+                    </LocalizedLink>
+                :
+                    <div onClick={item.onClick} className={styles.listItem__link}>
+                        <Translate value={item.title}/>
+                        { item.withoutIcon ? null : <ArrowForwardIosIcon className={styles.listItem__icon}/> }
+                    </div>
+            }
+
         </li>
     )
 }
