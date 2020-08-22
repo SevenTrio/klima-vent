@@ -3,7 +3,7 @@ import InstagramIcon from "@material-ui/icons/Instagram";
 import TwitterIcon from "@material-ui/icons/Twitter";
 import TelegramIcon from "@material-ui/icons/Telegram";
 
-const footerSocialData = [
+const socialData = [
     {
         name: 'facebook',
         url: 'https://facebook.com/',
@@ -26,4 +26,4 @@ const footerSocialData = [
     }
 ];
 
-export default footerSocialData;
+export default socialData;

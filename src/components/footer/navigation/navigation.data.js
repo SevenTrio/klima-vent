@@ -1,4 +1,4 @@
-const footerNavigationData = [
+const navigationData = [
     {
         title: 'footer.company.company',
         list: [
@@ -68,4 +68,4 @@ const footerNavigationData = [
     }
 ];
 
-export default footerNavigationData;
+export default navigationData;

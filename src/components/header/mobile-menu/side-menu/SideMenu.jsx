@@ -49,34 +49,34 @@ const SideMenu = ({handleClose}) => {
         <Fragment>
             <Portal>
                 <ClickAwayListener onClickAway={handleCloseWithTransition}>
-                            <Transition
-                                in={inProp}
-                                appear={true}
-                                timeout={duration}
-                                onExited={handleClose}
+                    <Transition
+                        in={inProp}
+                        appear={true}
+                        timeout={duration}
+                        onExited={handleClose}
+                    >
+                        {state => (
+                            <div
+                                ref={targetRef}
+                                className={styles.root}
+                                style={{
+                                    ...defaultStyle,
+                                    ...transitionStyles[state]
+                                }}
                             >
-                                {state => (
-                                    <div
-                                        ref={targetRef}
-                                        className={styles.root}
-                                        style={{
-                                            ...defaultStyle,
-                                            ...transitionStyles[state]
-                                        }}
-                                    >
-                                        <AppBar className={styles.appBar}>
-                                            <IconButton className={styles.backButton} onClick={handleCloseWithTransition}>
-                                                <ArrowBackIcon className={styles.backButtonIcon}/>
-                                            </IconButton>
-                                            <Logo classes={{root: styles.logo, image: styles.logo__image, companyName: styles.logo__companyName}}/>
-                                            <MobileLanguageSwitcher/>
-                                        </AppBar>
-                                        <MobileCatalog/>
-                                        <MobileProfileMenu/>
-                                        <MobileCity/>
-                                    </div>
-                                )}
-                            </Transition>
+                                <AppBar className={styles.appBar}>
+                                    <IconButton className={styles.backButton} onClick={handleCloseWithTransition}>
+                                        <ArrowBackIcon className={styles.backButtonIcon}/>
+                                    </IconButton>
+                                    <Logo classes={{root: styles.logo, image: styles.logo__image, companyName: styles.logo__companyName}}/>
+                                    <MobileLanguageSwitcher/>
+                                </AppBar>
+                                <MobileCatalog/>
+                                <MobileProfileMenu/>
+                                <MobileCity/>
+                            </div>
+                        )}
+                    </Transition>
                 </ClickAwayListener>
             </Portal>
 

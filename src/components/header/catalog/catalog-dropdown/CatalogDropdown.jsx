@@ -5,7 +5,7 @@ import classNames from 'classnames/bind';
 import LocalizedLink from "../../../localized-link/LocalizedLinkContainer";
 import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
 import PrimaryPropsMenu from "./PrimaryPropsMenu";
-import menuProps from '../../../../data/catalogMenuProps'
+import menuProps from '../catalog.data'
 
 const CatalogDropdown = ({open}) => {
     const [activePropsId, setActivePropsId] = useState(null);

@@ -1,7 +1,7 @@
 import React from "react";
 import styles from './MobileProfileMenu.module.sass';
 
-import { loginProps, userProps } from "../../../../../data/mobileProfileMenuProps";
+import { loginProps, userProps } from "./mobileProfileMenu.data";
 import LocalizedLink from "../../../../localized-link/LocalizedLinkContainer";
 import {Translate} from "react-redux-i18n";
 

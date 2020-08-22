@@ -3,7 +3,7 @@ import styles from "./List.module.sass";
 
 import ListItem from "./ListItem";
 
-import {loginProps, userProps} from '../../../../data/profileMenuProps';
+import {loginProps, userProps} from '../profileMenu.data';
 
 const List = ({ authorized }) => {
     const listProps = authorized ? userProps : loginProps;
