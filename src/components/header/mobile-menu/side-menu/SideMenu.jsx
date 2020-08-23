@@ -9,7 +9,7 @@ import BlackoutWithTransition from "../../../blackout-with-transition/BlackoutWi
 import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
 import ArrowBackIcon from '@material-ui/icons/ArrowBackRounded';
 import IconButton from "@material-ui/core/IconButton";
-import Logo from "../../logo/Logo";
+import Logo from "../../../logo/Logo";
 import MobileLanguageSwitcher from "./mobile-language-swither/MobileLanguageSwitcher";
 import MobileCatalog from "./mobile-catalog/MobileCatalog";
 import MobileProfileMenu from "./mobile-profile-menu/MobileProfileMenuContainer"
@@ -34,7 +34,7 @@ const SideMenu = ({handleClose}) => {
         exited:   { opacity: 1, marginLeft: 0 }
     };
 
-    useEffect(() =>{
+    useEffect(() => {
         const targetElement = targetRef.current;
         disableBodyScroll(targetElement);
 
@@ -69,11 +69,11 @@ const SideMenu = ({handleClose}) => {
                                         <ArrowBackIcon className={styles.backButtonIcon}/>
                                     </IconButton>
                                     <Logo classes={{root: styles.logo, image: styles.logo__image, companyName: styles.logo__companyName}}/>
-                                    <MobileLanguageSwitcher/>
+                                    <MobileLanguageSwitcher handleMenuClose={handleClose}/>
                                 </AppBar>
                                 <MobileCatalog/>
-                                <MobileProfileMenu/>
-                                <MobileCity/>
+                                <MobileProfileMenu handleMenuClose={handleCloseWithTransition}/>
+                                <MobileCity handleMenuClose={handleCloseWithTransition}/>
                             </div>
                         )}
                     </Transition>

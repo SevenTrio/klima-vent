@@ -5,11 +5,11 @@ import LocalizedLink from "../../../../localized-link/LocalizedLinkContainer";
 import {Translate} from "react-redux-i18n";
 import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 import AccountCircleIcon from "@material-ui/icons/AccountCircleRounded";
-import CompareIcon from "../../../../compareIcon/CompareIcon";
+import CompareIcon from "../../../../compare-icon/CompareIcon";
 import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorderRounded";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCartRounded";
 
-const MobileProfileMenu = ({ authorized, setCartOpen, setCompareOpen, setWishlistOpen }) => {
+const MobileProfileMenu = ({ handleMenuClose, authorized, setCartOpen, setCompareOpen, setWishlistOpen }) => {
     const loginProps = [
         {
             title: 'profile.login',
@@ -36,19 +36,31 @@ const MobileProfileMenu = ({ authorized, setCartOpen, setCompareOpen, setWishlis
             title: 'profile.compare',
             icon: CompareIcon,
             type: 'button',
-            onClick: () => setCompareOpen(true)
+            onClick: async () => {
+                handleMenuClose();
+                await new Promise(r => setTimeout(r, 450)); // костыль чтобы заставить работать Modal из Material UI правильно
+                setCompareOpen(true);
+            }
         },
         {
             title: 'profile.wish_list',
             icon: FavoriteBorderIcon,
             type: 'button',
-            onClick: () => setWishlistOpen(true)
+            onClick: async () => {
+                handleMenuClose();
+                await new Promise(r => setTimeout(r, 450)); // костыль чтобы заставить работать Modal из Material UI правильно
+                setWishlistOpen(true)
+            }
         },
         {
             title: 'profile.cart',
             icon: ShoppingCartIcon,
             type: 'button',
-            onClick: () => setCartOpen(true)
+            onClick: async () => {
+                handleMenuClose();
+                await new Promise(r => setTimeout(r, 450)); // костыль чтобы заставить работать Modal из Material UI правильно
+                setCartOpen(true);
+            }
         },
         {
             title: 'profile.logout',

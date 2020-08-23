@@ -1,4 +1,5 @@
 const initialState = {
+    open: false,
     currentCity: {
         id: "115",
         parent_id: "5",
@@ -10,16 +11,24 @@ const initialState = {
 
 export default (state = initialState, action) => {
     switch (action.type) {
+        case "SET_CITY_OPEN":
+            return {
+                ...state,
+                open: action.payload
+            };
+
         case "SET_CITY":
             return {
                 ...state,
                 currentCity: action.payload
             };
+
         case "SET_CITIES-LIST":
             return {
                 ...state,
                 citiesList: action.payload
             };
+
         default:
             return state;
     }

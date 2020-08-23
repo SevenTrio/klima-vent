@@ -1,12 +1,9 @@
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as cityActions from '../../../redux/actions/city';
-import City from './City';
-
-
+import CityButton from './CityButton';
 
 const mapStateToProps = ({ city }) => ({
-    citiesList: city.citiesList,
     currentCity: city.currentCity,
 });
 
@@ -17,4 +14,4 @@ const mapDispatchToProps = dispatch => ({
 export default connect(
     mapStateToProps,
     mapDispatchToProps,
-)(City);
+)(CityButton);

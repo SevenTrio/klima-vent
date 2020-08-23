@@ -1,9 +1,9 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import styles from './Logo.module.sass';
 import classNames from 'classnames/bind'
 
 import {Translate} from "react-redux-i18n";
-import LocalizedLink from "../../localized-link/LocalizedLinkContainer";
+import LocalizedLink from "../localized-link/LocalizedLinkContainer";
 
 const logo = '/images/logo.png';
 

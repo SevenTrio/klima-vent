@@ -1,4 +1,4 @@
 export const setCartOpen = open => ({
-    type: "SET_OPEN",
+    type: "SET_CART_OPEN",
     payload: open
 });

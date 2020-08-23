@@ -4,7 +4,7 @@ const initialState = {
 
 export default (state = initialState, action) => {
     switch (action.type) {
-        case "SET_OPEN":
+        case "SET_WISHLIST_OPEN":
             return {
                 ...state,
                 open: action.payload

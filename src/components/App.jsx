@@ -11,8 +11,13 @@ import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Hidden from '@material-ui/core/Hidden';
 
+import ScrollToTop from "./scroll-to-top/ScrollToTop";
 import LanguageInspector from "./language-inspector/LanguageInspectorContainer";
 
+import City from "./city/CityContainer";
+import Cart from "./cart/CartContainer";
+import Compare from "./compare/CompareContainer";
+import Wishlist from "./wishlist/WishlistContainer";
 import Header from "./header/Header";
 import Footer from "./footer/Footer";
 import MobileFooter from "./footer/MobileFooter";
@@ -51,8 +56,13 @@ const theme = createMuiTheme({
 const App = () => {
     return (
         <Router>
+            <ScrollToTop/>
             <CssBaseline/>
             <ThemeProvider theme={theme}>
+                <City/>
+                <Cart/>
+                <Compare/>
+                <Wishlist/>
                 <Header/>
 
                     <Switch>

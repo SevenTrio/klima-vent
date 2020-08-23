@@ -6,17 +6,17 @@ import Container from '@material-ui/core/Container';
 import Hidden from '@material-ui/core/Hidden';
 
 import Telephone from "./telephone/Telephone";
-import Logo from "./logo/Logo";
+import Logo from "../logo/Logo";
 import MobileMenu from "./mobile-menu/MobileMenu";
 import Search from "./search/SearchContainer";
 
 import LanguageSwitcher from "./language-switcher/LanguageSwitcher";
-import City from "./city/CityContainer";
+import CityButton from "./city-button/CityButtonContainer";
 import Profile from "./profile-menu/ProfileMenuContainer";
-import Catalog from "./catalog/CatalogContainer";
-import Compare from "./compare/CompareContainer";
-import WishList from "./wishlist/WishListContainer";
-import Cart from "./cart/CartContainer";
+import Catalog from "./catalog/Catalog";
+import CompareButton from "./compare-button/CompareButtonContainer";
+import WishlistButton from "./wishlist-button/WishlistButtonContainer";
+import CartButton from "./cart-button/CartButtonContainer";
 
 const Header = () => {
     return (
@@ -26,7 +26,7 @@ const Header = () => {
                     <div className={styles.headerUpper}>
                         <Telephone/>
                         <LanguageSwitcher/>
-                        <City/>
+                        <CityButton/>
                         <Profile/>
                     </div>
                 </Hidden>
@@ -43,10 +43,10 @@ const Header = () => {
                     </Hidden>
                     <Search/>
                     <Hidden smDown>
-                        <Compare/>
-                        <WishList/>
+                        <CompareButton/>
+                        <WishlistButton/>
                     </Hidden>
-                    <Cart/>
+                    <CartButton/>
                 </div>
             </Container>
         </AppBar>

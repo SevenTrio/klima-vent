@@ -6,6 +6,7 @@ import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import AccordionDetails from "@material-ui/core/AccordionDetails";
 import Accordion from "@material-ui/core/Accordion";
 import ListItem from "./list-item/ListItem";
+import {Translate} from "react-redux-i18n";
 
 
 const MobileNavigationItem = ({ item }) => {
@@ -16,7 +17,9 @@ const MobileNavigationItem = ({ item }) => {
                     className={styles.accordion__summary}
                     expandIcon={<ExpandMoreIcon />}
                 >
-                    <p className={styles.title}>{item.title}</p>
+                    <p className={styles.title}>
+                        <Translate value={item.title}/>
+                    </p>
                 </AccordionSummary>
 
                 <AccordionDetails>

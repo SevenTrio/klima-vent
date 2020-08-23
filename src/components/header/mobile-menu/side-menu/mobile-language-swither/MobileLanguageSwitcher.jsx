@@ -4,7 +4,7 @@ import styles from './MobileLanguageSwitcher.module.sass'
 import {supportedLocales} from "../../../../../i18n/i18n.config";
 import {NavLink} from "react-router-dom";
 
-const MobileLanguageSwitcher = () => {
+const MobileLanguageSwitcher = ({handleMenuClose}) => {
     return(
         <div className={styles.root}>
             {
@@ -16,7 +16,7 @@ const MobileLanguageSwitcher = () => {
 
                     return(
                         <div key={index} className={styles.languagesItem}>
-                            <NavLink to={path} className={styles.languageLink} activeClassName={styles.languageLink_active}>
+                            <NavLink to={path} onClick={handleMenuClose} className={styles.languageLink} activeClassName={styles.languageLink_active}>
                                 {code.toUpperCase()}
                             </NavLink>
                         </div>

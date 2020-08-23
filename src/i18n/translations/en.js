@@ -3,7 +3,7 @@ const en = {
         name: "KlimaVent"
     },
     city: {
-        title: "City:",
+        title: "City: ",
         choose_city: "Choose your city!",
         help_message: "If you could not find your city - try to look for the closest one to you.",
         label: "City",

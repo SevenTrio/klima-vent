@@ -2,7 +2,6 @@ import React from 'react';
 import styles from './ProfileMenu.module.sass'
 
 import List from "./list/List";
-import {setWishlistOpen} from "../../../redux/actions/wishlist";
 
 const ProfileMenu = ({ user, authorized, setCartOpen, setCompareOpen, setWishlistOpen }) => {
     const [open, setOpen] = React.useState(false);
