@@ -1,9 +1,11 @@
 import React, {Fragment} from "react";
 
+import LoginForm from "../components/login-form/LoginFormContainer";
+
 const Login = () => {
     return(
         <Fragment>
-            <h1 style={{marginBottom: '500px'}}>Login page</h1>
+            <LoginForm/>
         </Fragment>
     )
 }

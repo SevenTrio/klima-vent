@@ -107,6 +107,11 @@ const ua = {
     modal_plug: {
         message: "Вибачте, цей контент ще в розробці!",
         close: "Закрити"
+    },
+    login: {
+        login: "Логін:",
+        password: "Пароль:",
+        sign_in: "Увійти"
     }
 };
 

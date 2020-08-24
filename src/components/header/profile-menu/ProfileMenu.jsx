@@ -3,7 +3,7 @@ import styles from './ProfileMenu.module.sass'
 
 import List from "./list/List";
 
-const ProfileMenu = ({ user, authorized, setCartOpen, setCompareOpen, setWishlistOpen }) => {
+const ProfileMenu = ({ user, authorized, setCartOpen, setCompareOpen, setWishlistOpen, removeUser }) => {
     const [open, setOpen] = React.useState(false);
 
     const handleOpen = () => {
@@ -18,12 +18,14 @@ const ProfileMenu = ({ user, authorized, setCartOpen, setCompareOpen, setWishlis
         {
             title: 'profile.login',
             type: 'link',
-            url: '/login'
+            url: '/login',
+            onClick: handleClose
         },
         {
             title: 'profile.register',
             type: 'link',
-            url: '/register'
+            url: '/register',
+            onClick: handleClose
         }
     ];
 
@@ -31,32 +33,46 @@ const ProfileMenu = ({ user, authorized, setCartOpen, setCompareOpen, setWishlis
         {
             title: 'profile.personal_data',
             type: 'link',
-            url: '#'
+            url: '#',
+            onClick: handleClose
         },
         {
             title: 'profile.wish_list',
             type: 'button',
-            onClick: () => setWishlistOpen(true)
+            onClick: () => {
+                handleClose();
+                setWishlistOpen(true);
+            }
         },
         {
             title: 'profile.compare',
             type: 'button',
-            onClick: () => setCompareOpen(true)
+            onClick: () => {
+                handleClose();
+                setCompareOpen(true);
+            }
         },
         {
             title: 'profile.cart',
             type: 'button',
-            onClick: () => setCartOpen(true)
+            onClick: () => {
+                handleClose();
+                setCartOpen(true);
+            }
         },
         {
             title: 'profile.my_purchases',
             type: 'link',
-            url: '#'
+            url: '#',
+            onClick: handleClose
         },
         {
             title: 'profile.logout',
             type: 'button',
-            onClick: () => {},
+            onClick: () => {
+                handleClose();
+                removeUser();
+            },
             withoutIcon: true,
         }
     ];

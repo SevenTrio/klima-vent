@@ -1,10 +1,12 @@
+import { v4 as uuid } from 'uuid';
+
 const initialState = {
     user: {
-        id: 123,
-        name: 'Иван',
-        lastname: 'Иванов',
+        id: null,
+        name: '',
+        lastname: '',
     },
-    authorized: true
+    authorized: false
 };
 
 export default (state = initialState, action) => {
@@ -12,7 +14,11 @@ export default (state = initialState, action) => {
         case "SET_USER":
             return {
                 ...state,
-                user: action.payload,
+                user: {
+                    id: action.payload.id || uuid(),
+                    name: action.payload.name,
+                    lastname: action.payload.lastname || ''
+                },
                 authorized: true
             };
 

@@ -9,19 +9,21 @@ import CompareIcon from "../../../../compare-icon/CompareIcon";
 import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorderRounded";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCartRounded";
 
-const MobileProfileMenu = ({ handleMenuClose, authorized, setCartOpen, setCompareOpen, setWishlistOpen }) => {
+const MobileProfileMenu = ({ handleMenuClose, authorized, setCartOpen, setCompareOpen, setWishlistOpen, removeUser }) => {
     const loginProps = [
         {
             title: 'profile.login',
             icon: ExitToAppIcon,
             type: 'link',
-            url: '/login'
+            url: '/login',
+            onClick: handleMenuClose
         },
         {
             title: 'profile.register',
             icon: AccountCircleIcon,
             type: 'link',
-            url: '/register'
+            url: '/register',
+            onClick: handleMenuClose
         }
     ];
 
@@ -30,7 +32,8 @@ const MobileProfileMenu = ({ handleMenuClose, authorized, setCartOpen, setCompar
             title: 'profile.personal_data',
             icon: AccountCircleIcon,
             type: 'link',
-            url: '#'
+            url: '#',
+            onClick: handleMenuClose
         },
         {
             title: 'profile.compare',
@@ -65,7 +68,10 @@ const MobileProfileMenu = ({ handleMenuClose, authorized, setCartOpen, setCompar
         {
             title: 'profile.logout',
             type: 'button',
-            onClick: () => {},
+            onClick: () => {
+                handleMenuClose();
+                removeUser();
+            },
             withoutIcon: true,
         }
     ];
@@ -83,7 +89,7 @@ const MobileProfileMenu = ({ handleMenuClose, authorized, setCartOpen, setCompar
                                 <li key={index} className={styles.listItem}>
                                     {
                                         listItem.type === 'link' ?
-                                            <LocalizedLink to={listItem.url} className={styles.listItem__link}>
+                                            <LocalizedLink to={listItem.url} onClick={listItem.onClick} className={styles.listItem__link}>
                                                 { listItem.withoutIcon ? null : <Icon className={styles.listItem__icon}/> }
                                                 <Translate value={listItem.title}/>
                                             </LocalizedLink>

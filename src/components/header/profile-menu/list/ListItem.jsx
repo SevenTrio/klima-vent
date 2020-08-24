@@ -10,7 +10,7 @@ const List = ({ item }) => {
         <li className={styles.listItem}>
             {
                 item.type === 'link' ?
-                    <LocalizedLink to={item.url} className={styles.listItem__link}>
+                    <LocalizedLink to={item.url} onClick={item.onClick} className={styles.listItem__link}>
                         <Translate value={item.title}/>
                         { item.withoutIcon ? null : <ArrowForwardIosIcon className={styles.listItem__icon}/> }
                     </LocalizedLink>

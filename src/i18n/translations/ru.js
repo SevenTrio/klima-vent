@@ -107,6 +107,11 @@ const ru = {
     modal_plug: {
         message: "Извините, этот контент ещё в разработке!",
         close: "Закрыть"
+    },
+    login: {
+        login: "Логин:",
+        password: "Пароль:",
+        sign_in: "Войти"
     }
 };
 

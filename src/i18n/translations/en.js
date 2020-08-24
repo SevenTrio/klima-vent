@@ -107,6 +107,11 @@ const en = {
     modal_plug: {
         message: "Sorry, this content is still under construction!",
         close: "Close"
+    },
+    login: {
+        login: "Login:",
+        password: "Password:",
+        sign_in: "Sign In"
     }
 };
 
