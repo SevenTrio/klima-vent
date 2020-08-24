@@ -41,7 +41,7 @@ const MobileProfileMenu = ({ handleMenuClose, authorized, setCartOpen, setCompar
             type: 'button',
             onClick: async () => {
                 handleMenuClose();
-                await new Promise(r => setTimeout(r, 450)); // костыль чтобы заставить работать Modal из Material UI правильно
+                await new Promise(r => setTimeout(r, 500)); // костыль чтобы заставить работать Modal из Material UI правильно
                 setCompareOpen(true);
             }
         },
@@ -51,7 +51,7 @@ const MobileProfileMenu = ({ handleMenuClose, authorized, setCartOpen, setCompar
             type: 'button',
             onClick: async () => {
                 handleMenuClose();
-                await new Promise(r => setTimeout(r, 450)); // костыль чтобы заставить работать Modal из Material UI правильно
+                await new Promise(r => setTimeout(r, 500)); // костыль чтобы заставить работать Modal из Material UI правильно
                 setWishlistOpen(true)
             }
         },
@@ -61,7 +61,7 @@ const MobileProfileMenu = ({ handleMenuClose, authorized, setCartOpen, setCompar
             type: 'button',
             onClick: async () => {
                 handleMenuClose();
-                await new Promise(r => setTimeout(r, 450)); // костыль чтобы заставить работать Modal из Material UI правильно
+                await new Promise(r => setTimeout(r, 500)); // костыль чтобы заставить работать Modal из Material UI правильно
                 setCartOpen(true);
             }
         },

@@ -7,7 +7,7 @@ const MobileCity = ({ handleMenuClose, setCityOpen, currentCity }) => {
 
     const handleOpen = async () => {
         handleMenuClose();
-        await new Promise(r => setTimeout(r, 450)); // костыль чтобы заставить работать Modal из Material UI правильно
+        await new Promise(r => setTimeout(r, 500)); // костыль чтобы заставить работать Modal из Material UI правильно
         setCityOpen(true);
     }
 

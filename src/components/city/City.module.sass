@@ -1,8 +1,22 @@
 @import "src/sass/config"
 
 
+.closeButton
+  position: absolute !important
+  top: 8px
+  right: 8px
+
+  padding: 8px !important
+
+
+.closeIcon
+  font-size: 24px !important
+  color: color(grey, 600)
+
+
 .title
   margin-left: 30px
+
 
 .name
   border-bottom: 1px dashed color(primary, contrast-text)
@@ -14,14 +28,15 @@
 
 .modal
   position: absolute
-  top: 30%
+  top: 40%
   left: 50%
   margin-right: -50%
   transform: translate(-50%, -50%)
 
   border-radius: 5px
 
-  width: 700px
+  width: 90%
+  max-width: 650px
   padding: 30px 50px
 
   background-color: color(background, paper)
@@ -30,15 +45,60 @@
   &:focus
     outline: none
 
+  +to($break_md)
+    top: 10vh
+    max-height: 80vh
+    transform: translate(-50%, 0)
+    overflow-y: scroll
 
-.modal__autocomplete
+
+.modal__form
+  display: flex
+  flex-direction: column
+
+
   margin-top: 50px
   margin-bottom: 20px
 
+
+.modal__autocomplete
+  display: flex
+
   width: 300px
+
+  +to($break_sm)
+    width: 100%
+
+
+.modal__button
+  display: flex
+  align-items: center
+  justify-content: center
+
+  width: 180px
+  height: 48px
+  margin-top: 40px
+  margin-left: auto
+
+  border: none
+  border-radius: 3px
+
+  font-size: 15px
+
+  color: color(primary, contrast-text)
+  background-color: color(primary, main)
+
+  &:hover
+    background-color: color(primary, dark)
+
+  +to($break_sm)
+    width: 132px
+    margin-top: 60px
 
 
 .modal__error
+  margin-bottom: 0
+
   font-size: 14px
 
   color: color(error, dark)

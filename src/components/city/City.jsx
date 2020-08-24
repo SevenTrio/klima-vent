@@ -7,13 +7,14 @@ import TextField from '@material-ui/core/TextField';
 import Autocomplete, {createFilterOptions} from '@material-ui/lab/Autocomplete';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import useAxiosRequest from "../../helpers/useAxiosRequest";
+import CloseIcon from "@material-ui/icons/CloseRounded";
+import IconButton from "@material-ui/core/IconButton";
 
 const filterOptions = createFilterOptions({
     matchFrom: 'start',
     stringify: (option) => option.name,
 });
 
-// TODO: Добавить кнопку закрытия и сохранения, отимизировать под телефоны
 const City = ({ cityOpen, setCityOpen, currentCity, setCity, citiesList, setCitiesList }) => {
     const [value, setValue] = React.useState(currentCity);
 
@@ -37,6 +38,11 @@ const City = ({ cityOpen, setCityOpen, currentCity, setCity, citiesList, setCiti
         }
     }, [cities, setCitiesList])
 
+    const handleSubmit = (event) => {
+        handleModalClose();
+        event.preventDefault();
+    }
+
     const handleModalClose = () => {
         setCityOpen(false);
         currentCity.id !== value.id && setCity(value);
@@ -48,41 +54,51 @@ const City = ({ cityOpen, setCityOpen, currentCity, setCity, citiesList, setCiti
             onClose={handleModalClose}
         >
             <div className={styles.modal}>
+                <IconButton className={styles.closeButton} onClick={handleModalClose}>
+                    <CloseIcon className={styles.closeIcon}/>
+                </IconButton>
+
                 <h2><Translate value="city.choose_city"/></h2>
                 <p><Translate value="city.help_message"/></p>
 
-                <Autocomplete
-                    className={styles.modal__autocomplete}
-                    getOptionSelected={(option, value) => option.name === value.name}
-                    getOptionLabel={(option) => option.name}
-                    groupBy={(option) => option.name[0].toUpperCase()}
-                    filterOptions={filterOptions}
-                    filterSelectedOptions={true}
-                    options={citiesList}
-                    value={value}
-                    onChange={(event, newValue) => {
-                        newValue !== null && setValue(newValue);
-                    }}
-                    loading={cities.isFetching}
-                    loadingText={I18n.t("city.loading")}
-                    renderInput={(params) => (
-                        <TextField
-                            {...params}
-                            label={I18n.t("city.label")}
-                            variant="outlined"
-                            InputProps={{
-                                ...params.InputProps,
-                                endAdornment: (
-                                    <React.Fragment>
-                                        {cities.isFetching ? <CircularProgress color="inherit" size={20} /> : null}
-                                        {params.InputProps.endAdornment}
-                                    </React.Fragment>
-                                ),
-                            }}
-                        />
-                    )}
-                />
-                {cities.error ? <p className={styles.modal__error}><Translate value="city.error_message"/></p> : null}
+                <form className={styles.modal__form} onSubmit={handleSubmit}>
+                    <Autocomplete
+                        className={styles.modal__autocomplete}
+                        getOptionSelected={(option, value) => option.name === value.name}
+                        getOptionLabel={(option) => option.name}
+                        groupBy={(option) => option.name[0].toUpperCase()}
+                        filterOptions={filterOptions}
+                        filterSelectedOptions={true}
+                        options={citiesList}
+                        value={value}
+                        onChange={(event, newValue) => {
+                            newValue !== null && setValue(newValue);
+                        }}
+                        loading={cities.isFetching}
+                        loadingText={I18n.t("city.loading")}
+                        renderInput={(params) => (
+                            <TextField
+                                {...params}
+                                label={I18n.t("city.label")}
+                                variant="outlined"
+                                InputProps={{
+                                    ...params.InputProps,
+                                    endAdornment: (
+                                        <React.Fragment>
+                                            {cities.isFetching ? <CircularProgress color="inherit" size={20} /> : null}
+                                            {params.InputProps.endAdornment}
+                                        </React.Fragment>
+                                    ),
+                                }}
+                            />
+                        )}
+                    />
+                    {cities.error ? <p className={styles.modal__error}><Translate value="city.error_message"/></p> : null}
+
+                    <button className={styles.modal__button}>
+                        Принять
+                    </button>
+                </form>
             </div>
         </Modal>
     )
