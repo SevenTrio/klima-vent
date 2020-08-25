@@ -8,7 +8,12 @@ import Rating from "./rating/Rating";
 import Price from "./price/Price";
 import {Translate} from "react-redux-i18n";
 
-const Product = ({ product }) => {
+const Product = ({ product, setCartOpen }) => {
+
+    const handleBuyButtonClick = () => {
+        setCartOpen(true)
+    };
+
     return(
         <div className={styles.root}>
             <Code id={product.id}/>
@@ -18,7 +23,7 @@ const Product = ({ product }) => {
 
             <div className={styles.bottomRow}>
                 <Price price={product.price}/>
-                <button className={styles.button}>
+                <button className={styles.button} onClick={handleBuyButtonClick}>
                     <Translate value="product.buy"/>
                 </button>
             </div>

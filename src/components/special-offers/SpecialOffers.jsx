@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './SpecialOffers.module.sass';
 import useAxiosRequest from "../../helpers/useAxiosRequest";
 
-import Product from "../product/Product";
+import Product from "../product/ProductContainer";
 import {Translate} from "react-redux-i18n";
 
 const SpecialOffers = () => {

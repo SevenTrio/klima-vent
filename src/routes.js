@@ -20,6 +20,11 @@ const routes = [
         component: Login
     },
     {
+        path: "/register",
+        exact: true,
+        component: Login
+    },
+    {
         path: "/",
         exact: true,
         component: Home
