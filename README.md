@@ -1,68 +1,30 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# О проекте
+Перед Вами мой первый опыт работы с **React.js** и сопутствующими библиотеками.<br>
+В задумке было создать интернет магазин с нуля, используя новую для себя технологию. Стояла цель закончить его за пару-тройку месяцев, но было не учтено время на изучение новых подходов к выполнению привычных задач, разработку новой архитектуры, чтение документации и литературы. Также возникли трудности с отсутствием сервера: был создан импровизированный *back-end* — каталог ``/api/`` внутри ``/public/`` имитирующий настоящее *REST API*.<br>
+В данный момент сверстана главная страница и её мобильная версия, за исключением нескольких модальных окон.<br>
+По маршрутам ``/login`` и ``/register`` находится импровизированный компонент, который авторизует пользователя при вводе любого пароля.
 
-## Available Scripts
+**[Ссылка на демо-версию](https://seventrio.github.io/react-app)**
 
-In the project directory, you can run:
+## Файловая структура
+- ``src/`` — корневой каталог React приложения
+    - ``components/`` — каталог со всеми компонентами приложения, каждый компонент вынесен в свой отдельный каталог, который содержит файл компонента с расширением *jsx*, абстрагированный от внешней логики, *sass* файл со стилями и *контейнер* (компонент высшего порядка) позволяющий добавить компоненту некоторую логику и связать его с хранилищем *redux*. <br> Если в компоненте используются другие компоненты которые не используются за его пределами, то они также помещаются в этот каталог;
+    - ``helpers/`` — вспомогательные утилиты, пользовательские *хуки*;
+    - ``i18n/`` — все связанное с интернационализацией: переводы, конфиг, утилиты;
+    - ``pages/`` — компоненты, которые являются страницами сайта;
+    - ``redux/`` — содержит все связанное *redux*: действия, редюсеры и хранилище;
+    - ``sass/`` — содержит общие стили, миксины и переменные;
+    - ``index.js`` — основной файл приложения;
+    - ``routes.js`` — связывает маршруты с компонентами.
 
-### `npm start`
-
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+## Технологии использованные в проекте:
+- **[React](https://reactjs.org/)** — основная библиотека проекта, позволяет описывать как части интерфейса приложения выглядят в разных состояниях и своевременно обновляет их при изменении данных;
+- **[Webpack](https://webpack.js.org/)**  —  сборщик проекта;
+- **[Material UI](https://material-ui.com/)** — библиотека готовых UI компонентов;
+- **[node-sass](https://www.npmjs.com/package/node-sass)** — компилирует *sass* в *css*;
+- **[classnames](https://www.npmjs.com/package/classnames)** — позволяет удобно добавлять компоненту несколько классов;
+- **[redux](https://redux.js.org/)** — централизованное хранилище состояния всего приложения, применяется когда нужно использовать одно состояние в разных местах приложения;
+- **[react-redux-i18n](https://www.npmjs.com/package/react-redux-i18n)** — организовывает локализацию и интернационализацию приложения, посредством хранения переводов в хранилище и предоставляет удобные компоненты которые автоматически обновляются при изменении состояния;
+- **[react-router](https://reactrouter.com/)** — предоставляет *роутинг* по приложению
+- **[axios](https://www.npmjs.com/package/axios)** — служит заменой стандартному [Fetch API](https://developer.mozilla.org/ru/docs/Web/API/Fetch_API), была выбрана мной из-за лучшей работы с загрузкой файлов на сервер (возможность отслеживать выгрузку);
+- **[uuid](https://www.npmjs.com/package/uuid)** — создание временного уникального *id* перед отправкой на сервер, где должно быть присвоено другое *id*.
